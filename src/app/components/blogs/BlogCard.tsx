@@ -33,7 +33,8 @@ const BlogCard = ({ blogData, locale }: { blogData: any; locale: any }) => {
         </div>
         <div className="pb-3 flex justify-end">
           <MainLink
-            href={`blogs/${blogData?.slug}`}
+            /* href={`blogs/${blogData?.slug}`} */
+            href={`blogs/2`}
             locale={locale}
             className="bg-transparent !text-primary hover:!text-[#A37130]/80 px-5 pt-2"
           >
