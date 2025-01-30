@@ -13,6 +13,7 @@ function InfoSection({
   btnText,
   btnLink,
   reverse,
+  noButton = false,
 }: {
   title: string;
   description: string;
@@ -20,6 +21,7 @@ function InfoSection({
   btnText: string;
   btnLink: string;
   reverse?: boolean;
+  noButton?: boolean;
 }) {
   return (
     <section className="bg-background px-5 lg:px-0 mt-16">
@@ -49,14 +51,16 @@ function InfoSection({
             <p className="text-muted-foreground mb-4 font-light text-xl max-lg:mb-5">
               {description}
             </p>
-            <div className="w-full flex justify-end">
-              <MainLink
-                href={btnLink}
-                className="text-secondary-foreground bg-primary px-6 py-4 rounded-2xl text-white inline-block mr-auto"
-              >
-                {btnText}
-              </MainLink>
-            </div>
+            {noButton && (
+              <div className="w-full flex justify-end">
+                <MainLink
+                  href={btnLink}
+                  className="text-secondary-foreground bg-primary px-6 py-4 rounded-2xl text-white inline-block mr-auto"
+                >
+                  {btnText}
+                </MainLink>
+              </div>
+            )}
           </div>
         </div>
       </Container>

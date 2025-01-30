@@ -96,3 +96,8 @@
 .scroll-container::-webkit-scrollbar {
     display: none; /* للمتصفحات مثل Chrome و Safari */
 }
+
+
+.bg-ii {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='5' stroke-dasharray='10' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+  }
