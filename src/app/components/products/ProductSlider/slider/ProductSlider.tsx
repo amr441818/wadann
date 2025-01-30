@@ -61,7 +61,7 @@ export default function ProductSlider({data}: {data: ItemSlider[]}) {
 
             
            {Array.from([1,3,4,5,6,7,8,9,10])?.map((item, index) => (<>
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               
               <div className="flex  justify-center items-center w-full h-full flex-col gap-4">
                 <Image
