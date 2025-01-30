@@ -1,11 +1,10 @@
-import { useTranslations } from "next-intl"
-
-import { NavbarMenueItem } from "@/types/shared"
-import { Link } from "@/i18n/routing"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import Language from "./components/language"
 import Container from "../components/shared/container"
+import Image from "next/image"
+import Language from "./components/language"
+import { Link } from "@/i18n/routing"
+import { NavbarMenueItem } from "@/types/shared"
+import { useTranslations } from "next-intl"
 
 const Header = () => {
     const t = useTranslations("Header")

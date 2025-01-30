@@ -1,8 +1,8 @@
-import Image from "next/image"
-import logo from "@/public/logo.svg"
-import MainLink from "../shared/main-link"
-import { Icon } from "@iconify/react"
 import BlogTags from "./BlogTags"
+import { Icon } from "@iconify/react"
+import Image from "next/image"
+import MainLink from "../shared/main-link"
+import logo from "@/public/logo.png"
 
 const BlogCard = ({ blogData, locale }: { blogData: any; locale: any }) => {
     return (

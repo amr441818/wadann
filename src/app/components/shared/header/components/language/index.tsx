@@ -1,17 +1,19 @@
 "use client"
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useTranslations } from "next-intl"
-import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
+
+import Image from "next/image"
 import langIcon from "@/public/assets/img/translate.svg"
 import langIconBlack from "@/public/assets/img/translateBlack.svg"
+import { useTranslations } from "next-intl"
 
 const Languge = ({ iconColor }: { iconColor?: string }) => {
     const t = useTranslations("Header")
     const router = useRouter()
     const pathname = usePathname()
     const changeLanguage = (locale: string) => {
-        const newPath = `/${locale}${pathname.replace(/^\/(en|fr)/, "")}` // Adjust based on locales
+        const newPath = `/${locale}${pathname.replace(/^\/(en|ar)/, "")}` // Adjust based on locales
         router.push(newPath)
     }
 
@@ -28,13 +30,13 @@ const Languge = ({ iconColor }: { iconColor?: string }) => {
                             height={20}
                             alt="currency"
                         />{" "}
-                        <SelectValue placeholder={pathname.split("/")[1] === "en" ? "EN" : "FR"} />
+                        <SelectValue placeholder={pathname.split("/")[1] === "en" ? "EN" : "AR"} />
                     </div>
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="z-[99]">
                     {" "}
                     <SelectItem value="en">{t("english")}</SelectItem>
-                    <SelectItem value="fr">{t("french")}</SelectItem>
+                    <SelectItem value="ar">{t("arabic")}</SelectItem>
                 </SelectContent>
             </Select>
         </>

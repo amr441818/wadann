@@ -1,10 +1,12 @@
 "use client"
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useTranslations } from "next-intl"
-import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
+
+import Image from "next/image"
 import currency from "@/public/assets/currency.svg"
 import currencyBlack from "@/public/assets/img/currencyBlack.svg"
+import { useTranslations } from "next-intl"
 
 const Currencies = ({ iconColor }: { iconColor?: string }) => {
     const t = useTranslations("Header")
@@ -32,10 +34,10 @@ const Currencies = ({ iconColor }: { iconColor?: string }) => {
                         <SelectValue placeholder={"in_local_storage" === "in_local_storage" ? "USD" : "USD"} />
                     </div>
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="z-[99]">
                     {" "}
                     <SelectItem value="en">{t("c1")}</SelectItem>
-                    <SelectItem value="fr">{t("c2")}</SelectItem>
+                    <SelectItem value="ar">{t("c2")}</SelectItem>
                 </SelectContent>
             </Select>
         </>

@@ -1,7 +1,8 @@
-import { routing } from './i18n/routing';
 import { NextRequest, NextResponse } from 'next/server';
+
 import createMiddleware from 'next-intl/middleware';
- 
+import { routing } from './i18n/routing';
+
 const middleware = createMiddleware(routing);
 export default function enhancedMiddleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -26,7 +27,7 @@ return middleware(request);
 }
 export const config = {
   // Match only internationalized pathnames
-  matcher: ['/', '/(fr|en)/:path*']
+  matcher: ['/', '/(ar|en)/:path*']
 };
 
 

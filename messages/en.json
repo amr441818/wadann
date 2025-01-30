@@ -9,7 +9,13 @@
     },
 
     "Header": {
-        "Home": "Home",
+        "home": "Home",
+        "whoWeAre": "who we are",
+        "products": "Products",
+        "doorDesign": "Door Design",
+        "ourPartners": "Our Partners",
+        "blogs": "Blogs",
+        "contactUs": "Contact Us",
         "bedrooms": "bedrooms",
         "bathrooms": "bathrooms",
         "About-Us": "About Us",
@@ -24,14 +30,14 @@
         "aboutUs": "about us  ",
         "services": "Services ",
         "news": "News",
-        "contactUs": "Contact Us ",
+        
         "login": "Login ",
         "logout": " Logout",
         "register": " New User",
         "profile": "Profile",
         "myAccount": "My Account",
         "english": "English",
-        "french": "French"
+        "arabic": "Arabic"
     },
 
     "tabs": {

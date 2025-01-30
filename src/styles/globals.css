@@ -4,11 +4,11 @@
 
 @layer base {
     html {
-        --color-primary: #a37130;
-        --color-secondary: #cea768;
+        --color-primary: #580C31;
+        --color-secondary: ##B49245;
         --body-color: #faf9f6;
         --color-main-text: rgba(11, 22, 23, 1);
-        --parg-color: #6b665f;
+        --parg-color: #636363;
         --color-initial: #ffffff;
         --tabs-background: rgba(233, 234, 245, 0.62);
         --color-third: rgba(233, 234, 245, 1);

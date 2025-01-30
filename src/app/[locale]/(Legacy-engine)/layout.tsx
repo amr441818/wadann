@@ -1,14 +1,15 @@
+import "@/styles/globals.css"
+
+import { Cairo } from "next/font/google"
+import Footer from "@/app/components/shared/footer"
+import Header from "@/app/components/shared/header"
+import { Icon } from "@iconify/react"
 import { NextIntlClientProvider } from "next-intl"
+import Providers from "@/styles/providers"
+import { ReactNode } from "react"
 import { getMessages } from "next-intl/server"
 import { notFound } from "next/navigation"
 import { routing } from "@/i18n/routing"
-import "@/styles/globals.css"
-import Header from "@/app/components/shared/header"
-import Footer from "@/app/components/shared/footer"
-import { ReactNode } from "react"
-import Providers from "@/styles/providers"
-import { Cairo } from "next/font/google"
-import { Icon } from "@iconify/react"
 
 // Define the correct type for LayoutProps
 interface LayoutProps {
@@ -35,10 +36,10 @@ export default async function Layout({ children, params }: LayoutProps) {
 
     // Return the layout with NextIntlClientProvider
     return (
-        <html lang={locale} dir={"ltr"} suppressHydrationWarning>
-            <body className={`${cairo.className} bg-bodyColor`} dir={"ltr"}>
-                <NextIntlClientProvider locale={locale || "en"} messages={messages}>
-                    <Providers locale={locale || "en"}>
+        <html lang={locale} dir={"rtl"} suppressHydrationWarning>
+            <body className={`${cairo.className} bg-bodyColor`} dir={"rtl"}>
+                <NextIntlClientProvider locale={locale || "ar"} messages={messages}>
+                    <Providers locale={locale || "ar"}>
                         <Header lang={locale} />
                        
                         <div className="fixed bottom-4 right-4 flex gap-5 flex-col z-[999]">
@@ -50,7 +51,7 @@ export default async function Layout({ children, params }: LayoutProps) {
                             </div>
                         </div>
                         {children}
-                        <Footer locale={locale || "en"} />
+                        <Footer locale={locale || "ar"} />
                     </Providers>
                 </NextIntlClientProvider>
             </body>

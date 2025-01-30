@@ -9,7 +9,13 @@
     },
 
     "Header": {
-        "Home": "الرئيسية",
+        "home": "الرئيسية",
+        "whoWeAre": "من نحن",
+        "products": "المنتجات",
+        "doorDesign": "صمم بابك",
+        "ourPartners": "شركاءنا",
+        "blogs": "المدونات",
+        "contactUs": "تواصل معنا ",
         "bedrooms": "الغرف",
         "bathrooms": "الحمامات",
         "About-Us": "عنا",
@@ -24,13 +30,14 @@
         "aboutUs": "عن الموقع ",
         "services": "خدماتنا ",
         "news": "الاخبار",
-        "contactUs": "تواصل معنا ",
+        
         "login": "تسجيل الدخول ",
         "logout": "تسجيل خروج",
         "register": "مستخدم جديد",
         "profile": "الملف الشخصى",
         "myAccount": "حسابى",
         "english": "الانجليزية",
+        "arabic": "العربية",
         "french": "الفرنسية"
     },
     "tabs": {

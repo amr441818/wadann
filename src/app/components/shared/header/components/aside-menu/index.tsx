@@ -1,38 +1,42 @@
 // @ts-nocheck
 
 "use client"
-import { useState } from "react"
+
 import { Icon } from "@iconify/react"
+import Image from "next/image"
 import MainLink from "../../../main-link"
-import { useTranslations } from "next-intl"
 import { NavbarMenueItem } from "@/types/shared"
 import RadioGroup from "@/app/components/filter/components/RadioGroup"
 import menu from "@/public/assets/menu.svg"
 import menuBlack from "@/public/assets/img/menuBlack.svg"
-import Image from "next/image"
+import { useState } from "react"
+import { useTranslations } from "next-intl"
 
 function AsideMenu({ lang, iconColor }: { lang: string; iconColor?: string }) {
     const [open, setOpen] = useState(false)
 
-    const t = useTranslations("Header")
+    const t = useTranslations("Header");
 
-    const menuItems: NavbarMenueItem[] = [
-        { value: "Home", path: "/" },
-        { value: "About-Us", path: "/" },
-        { value: "Contact-Us", path: "contact-us" },
-        { value: "List-Your-Poperty", path: "list-your-property" },
-    ]
+   
 
-    const menuItems2: NavbarMenueItem[] = [
-        { value: "Ready-to-Move", path: "/" },
-        { value: "Off-Plan", path: "/" },
-        { value: "Rent", path: "/" },
-    ]
+const menuItems: NavbarMenueItem[] = [
+    { value: t("home"), path: "/" },
+    { value: t("whoWeAre"), path: "/who-we-are" },
+    { value: t("products"), path: "/products" },
+    { value: t("doorDesign"), path: "/door-design" },
+    { value: t("ourPartners"), path: "/our-partners" },
+    { value: t("blogs"), path: "/blogs" },
+    { value: t("contactUs"), path: "/contact-us" },
+    // { value: t("profile"), path: "/profile" },
+    // { value: t("myAccount"), path: "/my-account" },
+  ];
+
+    
 
     return (
         <>
             {/* menu icon */}
-            <div className="flex  items-center gap-[20px] w-[150px] lg:w-[250px] text-base">
+            <div className="flex  items-center gap-[20px] text-base mr-7">
                 <div className="flex items-center justify-center gap-5 cursor-pointer" onClick={() => setOpen(!open)}>
                     <Image
                         className="w-[20px] h-[20px]"
@@ -65,7 +69,7 @@ function AsideMenu({ lang, iconColor }: { lang: string; iconColor?: string }) {
                 </div>
                 <div className="flex flex-col gap-6 items-center w-full px-8 text-xl font-medium">
                     {" "}
-                    <ul className="flex flex-col gap-6 items-end pb-6 w-full border-b border-white">
+                    <ul className="flex flex-col gap-6 items-end pb-6 w-full">
                         {menuItems?.map((item: NavbarMenueItem) => (
                             <li key={item?.value} onClick={() => setOpen(false)}>
                                 <MainLink
@@ -74,25 +78,12 @@ function AsideMenu({ lang, iconColor }: { lang: string; iconColor?: string }) {
                                     className="text-white"
                                     onClick={() => setOpen(false)}
                                 >
-                                    {t(item.value)}
+                                    {item.value}
                                 </MainLink>
                             </li>
                         ))}
                     </ul>
-                    <ul className="flex flex-col gap-6 items-end pb-6 w-full">
-                        {menuItems2?.map((item: NavbarMenueItem) => (
-                            <li key={item?.value} onClick={() => setOpen(false)}>
-                                <MainLink
-                                    href={item.path}
-                                    locale={lang}
-                                    className="text-white"
-                                    onClick={() => setOpen(false)}
-                                >
-                                    {t(item.value)}
-                                </MainLink>
-                            </li>
-                        ))}
-                    </ul>
+                 
                 </div>
             </div>
             {open && (

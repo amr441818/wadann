@@ -1,9 +1,14 @@
-import Image from "next/image"
-// import logo from "../../../../../public/logo.svg"
-import logoServer from "@/public/logoServer.svg"
 import Container from "../container"
-import MainLink from "../main-link"
 import { Icon } from "@iconify/react"
+import Image from "next/image"
+import MainLink from "../main-link"
+import logoServer from "@/public/logoServer.svg"
+
+// import logo from "../../../../../public/logo.png"
+
+
+
+
 
 const Footer = async (params: any) => {
     const { locale: language } = await params
@@ -30,7 +35,7 @@ const Footer = async (params: any) => {
                 <div className="grid grid-cols-1 md:grid-cols-4 py-14 gap-3">
                     <div className="flex justify-center md:justify-start max-md:items-center ">
                         <Image className="w-[200px] h-[54px]" src={logoServer} width={200} height={54} alt="logo" />
-                        {/* <Image src="logo.svg" width={100} height={100} alt="logo" /> */}
+                        {/* <Image src="logo.png" width={100} height={100} alt="logo" /> */}
                     </div>
 
                     {cols.map((col) => (

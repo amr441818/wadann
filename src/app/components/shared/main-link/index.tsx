@@ -1,4 +1,5 @@
 "use client"
+
 import Link from "next/link"
 
 interface MainLinkProps {
@@ -11,7 +12,7 @@ interface MainLinkProps {
 const MainLink = (params: MainLinkProps) => {
     const { locale, href, children, className } = params
     return (
-        <Link href={`/${locale}/${href}`} className={`text-white inline-block ${className}`}>
+        <Link href={`/${locale}/${href}`} className={`text-white bg-primary inline-block rounded-3xl ${className}`}>
             {children}
         </Link>
     )

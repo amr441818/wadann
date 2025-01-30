@@ -1,102 +1,140 @@
-"use client"
+"use client";
 
-import { useTranslations } from "next-intl"
-import Container from "../container"
-import { NavbarMenueItem } from "@/types/shared"
-import { Link } from "@/i18n/routing"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import Language from "./components/language"
-import Currencies from "./components/currencies"
-import { Icon } from "@iconify/react"
-import AsideMenu from "./components/aside-menu"
-import { usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+
+import AsideMenu from "./components/aside-menu";
+import { Button } from "@/components/ui/button";
+import Container from "../container";
+import Currencies from "./components/currencies";
+import { Icon } from "@iconify/react";
+import Image from "next/image";
+import Language from "./components/language";
+import { Link } from "@/i18n/routing";
+import { NavbarMenueItem } from "@/types/shared";
+import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const Header = ({ lang }: { lang: string }) => {
-    const [isScrolled, setIsScrolled] = useState(false)
-    const t = useTranslations("Header")
-    const menuItems: NavbarMenueItem[] = [
-        { value: t("homeLink"), path: "/" },
-        { value: t("aboutUs"), path: "/about-us" },
-        { value: t("services"), path: "/services" },
-        { value: t("news"), path: "/news" },
-        { value: t("contactUs"), path: "/contact-us" },
-        // { value: t("profile"), path: "/profile" },
-        // { value: t("myAccount"), path: "/my-account" },
-    ]
+  const [isScrolled, setIsScrolled] = useState(false);
+  const t = useTranslations("Header");
+  const menuItems: NavbarMenueItem[] = [
+    { value: t("home"), path: "/" },
+    { value: t("whoWeAre"), path: "/who-we-are" },
+    { value: t("products"), path: "/products" },
+    { value: t("doorDesign"), path: "/door-design" },
+    { value: t("ourPartners"), path: "/our-partners" },
+    { value: t("blogs"), path: "/blogs" },
+    { value: t("contactUs"), path: "/contact-us" },
+    // { value: t("profile"), path: "/profile" },
+    // { value: t("myAccount"), path: "/my-account" },
+  ];
 
-    // in (single blog | developer)
+  // in (single blog | developer)
 
-    const pathname = usePathname()
-    let place = pathname.split("/").pop()
-    // const place = "other-page"
-    // // @ts-ignore
+  const pathname = usePathname();
+  let place = pathname.split("/").pop();
+  // const place = "other-page"
+  // // @ts-ignore
 
-    console.log("pathname", pathname)
-    console.log("place", place)
+  console.log("pathname", pathname);
+  console.log("place", place);
 
-    let logoPath = place === "contact-us" ? "/logoGold.svg" : place === "developer" ? "/logoGold.svg" : "/logo.svg"
+  let logoPath =
+    place === "contact-us"
+      ? "/logoGold.svg"
+      : place === "developer"
+      ? "/logoGold.svg"
+      : "/logo.png";
 
-    console.log(logoPath)
-    const isSingleBlog = pathname.includes("blogs") && place !== undefined && place !== "blogs"
-    console.log("isSingleBlog", isSingleBlog)
-    if (isSingleBlog) {
-        place = "single-blog"
+  console.log(logoPath);
+  const isSingleBlog =
+    pathname.includes("blogs") && place !== undefined && place !== "blogs";
+  console.log("isSingleBlog", isSingleBlog);
+  if (isSingleBlog) {
+    place = "single-blog";
 
-        logoPath = "/logoBlack.svg"
-    }
+    logoPath = "/logoBlack.svg";
+  }
 
-    useEffect(() => {
-        const handleScroll = () => {
-            console.log("aaaaaaaaaaaa", window.scrollY)
-            if (window.scrollY > 2) {
-                setIsScrolled(true)
-            } else {
-                setIsScrolled(false)
-            }
-        }
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log("aaaaaaaaaaaa", window.scrollY);
+      if (window.scrollY > 2) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-        window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll)
-        }
-    }, [])
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-    return (
-        <div
-            className={`bg-transparent pb-4 pt-10 max-h-[90px] fixed w-full z-[99] px-5 lg:px-0 ${
-                place === "single-blog" ? "text-black" : "text-white"
-            } ${isScrolled ? "!bg-white shadow-lg !text-black [&_*]:!text-black" : ""} `}
-        >
-            <Container>
-                <nav className="flex items-center justify-between ">
-                    <AsideMenu iconColor={place === "single-blog" || isScrolled ? "black" : "white"} lang={lang} />
+  return (
+    <div
+      className={`bg-transparent pb-4 bg-white text-black pt-1 max-h-[105px] fixed w-full z-[99] px-5 lg:px-0  `}
+    >
+      <Container>
+        <nav className="flex items-center justify-between ">
+          {/* logo */}
+          <div>
+            <Image
+              src={"/logo.png"}
+              width={100}
+              height={100}
+              alt={"logo"}
+              className="h-[100px] w-[100px]"
+              priority
+            />
+          </div>
 
-                    <div>
-                        <Image
-                            src={isScrolled ? "/logoBlack.svg" : logoPath}
-                            width={100}
-                            height={100}
-                            alt={"logo"}
-                            className="h-[40px] w-[160px]"
-                            priority
-                        />
-                    </div>
+          {/* links */}
+          <div>
+            <ul className="hidden lg:flex items-center gap-4 w-full md:px-5 text-paragText">
+              {menuItems.map((item) => (
+                <li key={item.value} className="hover:text-primary">
+                  <Link
+                    href={item.path}
+                    locale={lang}
+                    className="text-[16px] font-medium"
+                  >
+                    {item.value}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-                    <div className="flex items-center justify-end gap-4 w-[150px] lg:w-[250px]">
-                        <Currencies iconColor={place === "single-blog" || isScrolled ? "black" : "white"} />
-                        <Language iconColor={place === "single-blog" || isScrolled ? "black" : "white"} />
-                        {/* <Button className="bg-initialBg px-10 text-primary h-[44px] border border-primary">
+          {/* language */}
+          <div className="flex items-center justify-end gap-4 w-fit mr-auto">
+            <Language iconColor={"black"} />
+            {/* <Currencies iconColor={"black"} /> */}
+            {/* <Button className="bg-initialBg px-10 text-primary h-[44px] border border-primary">
                             {t("register")}
                         </Button>
                         <Button className="bg-primaryBg px-10 text-initial h-[44px]">{t("login")}</Button> */}
-                    </div>
-                </nav>
-            </Container>
-        </div>
-    )
-}
+          </div>
 
-export default Header
+          {/* download */}
+          <button className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3 rounded-3xl">
+            <Icon icon="material-symbols:download-rounded" />
+            <span
+              className="whitespace-nowrap hidden sm:inline-block
+              "
+            >
+              تحمبل الكتالوج
+            </span>
+          </button>
+
+          {/* aside menu */}
+          <AsideMenu iconColor="black" lang={lang} />
+        </nav>
+      </Container>
+    </div>
+  );
+};
+
+export default Header;
