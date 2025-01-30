@@ -52,7 +52,7 @@ function InfoSection({
             <div className="w-full flex justify-end">
               <MainLink
                 href={btnLink}
-                className="text-secondary-foreground px-6 py-4 rounded-2xl text-white inline-block mr-auto"
+                className="text-secondary-foreground bg-primary px-6 py-4 rounded-2xl text-white inline-block mr-auto"
               >
                 {btnText}
               </MainLink>

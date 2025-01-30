@@ -27,7 +27,7 @@ function OurServices({ locale }: { locale: string }) {
                 هنا نبذة تفصيلية بسيطة الخدمة المقدمة من الشركة
               </p>
 
-              <MainLink className="px-5 py-2" locale={locale} href="/">
+              <MainLink className="px-5 py-2 bg-primary" locale={locale} href="/">
                 اطلب الآن
               </MainLink>
             </div>

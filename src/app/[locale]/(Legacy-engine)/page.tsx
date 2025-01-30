@@ -8,6 +8,7 @@ import {
 
 import Achievements from "@/app/components/Achievements";
 import AchievemetsSlider from "@/app/components/Achievements/slider/AchievemetsSlider";
+import BlogsHome from "@/app/components/home/BlogsHome";
 import { CardWrwpper } from "@/app/components/shared/card";
 import CustomList from "@/app/components/Test";
 import DeveloperSection from "@/app/components/home/DeveloperSection";
@@ -24,6 +25,7 @@ import OurServices from "@/app/components/home/OurServices";
 import PartnerBanner from "@/app/components/filter/components/PartnerBanner";
 import PhoneValidationExample from "@/app/components/shared/PhoneInput";
 import PropertyBanner from "@/app/components/filter/components/property-banner";
+import Statistics from "@/app/components/home/Statistics";
 import TopAreas from "@/app/components/TopAreas";
 import TopPlan from "@/app/components/TopPlan";
 import WhyUs from "@/app/components/WhyUs/WhyUs";
@@ -81,6 +83,8 @@ export default async function HomePage({ params }: LayoutProps) {
       />
 
 <OurServices locale={(await params).locale} />
+<Statistics locale={(await params).locale} />
+<BlogsHome locale={(await params).locale} />
 
 
       <PropertyBanner locale={(await params).locale} />
