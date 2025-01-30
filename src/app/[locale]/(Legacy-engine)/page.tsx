@@ -34,6 +34,7 @@ import teamImg from "@/public/assets/img/team.png";
 import whoImg from "@/public/assets/img/who.png";
 import Products from "@/app/components/products/Products";
 import Partners from "@/app/components/partners/Partners";
+import ContactForm from "@/app/components/contactForm/ContactForm";
 
 interface LayoutProps {
   params: Promise<{ locale: string | any }>; // Handle both promise and object
@@ -61,7 +62,7 @@ export default async function HomePage({ params }: LayoutProps) {
 
       <HeaderWrwpper
         data={headerdata}
-        height=" h-[780px] lg:h-[508px]"
+        height=" h-[580px] lg:h-[508px]"
         isVidoeOrslider
       >
        
@@ -92,41 +93,42 @@ export default async function HomePage({ params }: LayoutProps) {
 <BlogsHome locale={(await params).locale} />
 
 
-      <PropertyBanner locale={(await params).locale} />
-      <TopAreas locale={(await params).locale} />
+      {/* <PropertyBanner locale={(await params).locale} /> */}
+      {/* <TopAreas locale={(await params).locale} /> */}
 
-      <DeveloperSection
+      {/* <DeveloperSection
         locale={locale}
         title="Developers"
         description="We Deal with the best developers in the United Arab Emirates"
         image={teamImg}
         btnText="See All"
         btnLink="/"
-      />
+      /> */}
 
-      <WhyUs />
+      {/* <WhyUs /> */}
 
-      <DiscoverBannder locale={(await params).locale} />
+      {/* <DiscoverBannder locale={(await params).locale} /> */}
 
-      <InfoSection
+      {/* <InfoSection
         title="Who We Are"
         description={whoWeAreData?.data?.description}
         image={whoWeAreData?.data?.image?.original_url}
         btnText="Meet Our Founders"
         btnLink="/"
         reverse
-      />
+      /> */}
 
      
 
-      <TopPlan locale={(await params).locale} />
+      {/* <TopPlan locale={(await params).locale} /> */}
 
      
 
-      <PartnerBanner locale={(await params).locale} />
-      <Events events={eventsData?.data} locale={(await params).locale} />
+      {/* <PartnerBanner locale={(await params).locale} /> */}
+      {/* <Events events={eventsData?.data} locale={(await params).locale} /> */}
 
-      <GetInTouchSection />
+      {/* <GetInTouchSection /> */}
+      <ContactForm/>
     </div>
   );
 }
