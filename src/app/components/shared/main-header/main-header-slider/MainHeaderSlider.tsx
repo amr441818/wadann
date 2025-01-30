@@ -10,6 +10,7 @@ import { Autoplay } from "swiper/modules"
 import { useTranslations } from "next-intl"
 
 import Image from "next/image"
+import Container from "../../container"
 
 
 interface FileData {
@@ -38,10 +39,10 @@ export default function MainHeaderSlider(props:sliderProps) {
                 <Swiper
                     spaceBetween={0}
                     centeredSlides={true}
-                      autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false,
-                      }}
+                    //   autoplay={{
+                    //     delay: 3000,
+                    //     disableOnInteraction: false,
+                    //   }}
                      speed={700}
                       loop
                     
@@ -50,13 +51,26 @@ export default function MainHeaderSlider(props:sliderProps) {
                     style={{ zIndex: "0px" }}
                 >
 
+
+
+
                     {props?.files?.map((file, index)=> {
                         return (<> <SwiperSlide key={index} >
-                   
-                            <Image fill src={file?.original_url} alt={file?.file_name} className="bg-cover " />
+                            <div className="grid grid-cols-12 h-full w-full bg-primary">
+                                <div className="flex col-span-6 w-full items-end ">    <Image width={569} height={419} src='/assets/img/mainslider.png' alt={file?.file_name} className="!w-[569px] h-[419px] " /></div>
+                                <div className="flex w-full col-span-6 items-center justify-end">
+
+                                    <div className="flex flex-col items-start w-full text-white gap-[26px]">
+                                        <h1 className="text-[35px] font-bold w-[334px]">شركة وادان للأبواب الخشبية والمصفحة</h1>
+                                        <p className="w-[291px] text-start text-[16px] text-gray-300">الأبواب المتميزة والإبداع هو عنوان نجاحنا نستخدم أفضل وأقوى الخامات لمنتجاتنا وثقة عملائنا هي عنواننا</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        
                         </SwiperSlide></>)
                     })}
-                    
+                 
                    
                 </Swiper>
             </div>

@@ -32,6 +32,8 @@ import WhyUs from "@/app/components/WhyUs/WhyUs";
 import imgBanner from "@/public/assets/img/homePanner.png";
 import teamImg from "@/public/assets/img/team.png";
 import whoImg from "@/public/assets/img/who.png";
+import Products from "@/app/components/products/Products";
+import Partners from "@/app/components/partners/Partners";
 
 interface LayoutProps {
   params: Promise<{ locale: string | any }>; // Handle both promise and object
@@ -54,23 +56,19 @@ export default async function HomePage({ params }: LayoutProps) {
       {/* <div className=" z-[999] "> */}
 
       {/* </div> */}
+
+
+
       <HeaderWrwpper
         data={headerdata}
-        height=" h-[780px] lg:h-[668px]"
+        height=" h-[780px] lg:h-[508px]"
         isVidoeOrslider
       >
-        <div className="flex flex-col items-center  h-full w-full absolute top-[118px] lg:top-[230px]">
-          <div className="flex flex-col gap-6">
-            <h1 className="text-[24px] text-center  lg:text-[48px] font-medium ">
-              Discover Endless Property Opportunities
-            </h1>
-            <div className="text-[16px]   lg:text-[24px] text-center font-[300px] ">
-              Find the perfect property to buy, sell, or rent—all in one place.
-            </div>
-          </div>
-          <Filter filterType="home" />
-        </div>
+       
       </HeaderWrwpper>
+
+
+
 
       <InfoSection
         title="من نحن"
@@ -81,7 +79,14 @@ export default async function HomePage({ params }: LayoutProps) {
         btnText="Book a Consultation"
         btnLink="/"
       />
-
+ <Products
+        achievements={achievementsData?.data}
+        locale={(await params).locale}
+      />
+ <Partners
+        achievements={achievementsData?.data}
+        locale={(await params).locale}
+      />
 <OurServices locale={(await params).locale} />
 <Statistics locale={(await params).locale} />
 <BlogsHome locale={(await params).locale} />
@@ -116,10 +121,7 @@ export default async function HomePage({ params }: LayoutProps) {
 
       <TopPlan locale={(await params).locale} />
 
-      <Achievements
-        achievements={achievementsData?.data}
-        locale={(await params).locale}
-      />
+     
 
       <PartnerBanner locale={(await params).locale} />
       <Events events={eventsData?.data} locale={(await params).locale} />
