@@ -75,7 +75,7 @@ const Header = ({ lang }: { lang: string }) => {
 
   return (
     <div
-      className={`bg-transparent pb-4 bg-white text-black pt-1 max-h-[105px] fixed w-full z-[99] px-5 lg:px-0  `}
+      className={`bg-transparent pb-4 bg-white text-black pt-1 max-h-[105px] fixed w-full z-[99] px-5 lg:px-0 top-0`}
     >
       <Container>
         <nav className="flex items-center justify-between ">
@@ -99,7 +99,7 @@ const Header = ({ lang }: { lang: string }) => {
                   <Link
                     href={item.path}
                     locale={lang}
-                    className="text-[16px] font-medium"
+                    className="text-[16px] font-medium text-xs"
                   >
                     {item.value}
                   </Link>
@@ -108,29 +108,30 @@ const Header = ({ lang }: { lang: string }) => {
             </ul>
           </div>
 
-          {/* language */}
-          <div className="flex items-center justify-end gap-4 w-fit mr-auto">
-            <Language iconColor={"black"} />
-            {/* <Currencies iconColor={"black"} /> */}
-            {/* <Button className="bg-initialBg px-10 text-primary h-[44px] border border-primary">
+          <div className="flex items-center">
+            {" "}
+            {/* language */}
+            <div className="flex items-center justify-end gap-4 w-fit">
+              <Language iconColor={"black"} />
+              {/* <Currencies iconColor={"black"} /> */}
+              {/* <Button className="bg-initialBg px-10 text-primary h-[44px] border border-primary">
                             {t("register")}
                         </Button>
                         <Button className="bg-primaryBg px-10 text-initial h-[44px]">{t("login")}</Button> */}
-          </div>
-
-          {/* download */}
-          <button className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3 rounded-3xl">
-            <Icon icon="material-symbols:download-rounded" />
-            <span
-              className="whitespace-nowrap hidden sm:inline-block
+            </div>
+            {/* download */}
+            <button className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3 rounded-3xl">
+              <Icon icon="material-symbols:download-rounded" />
+              <span
+                className="whitespace-nowrap hidden sm:inline-block
               "
-            >
-              تحمبل الكتالوج
-            </span>
-          </button>
-
-          {/* aside menu */}
-          <AsideMenu iconColor="black" lang={lang} />
+              >
+                تحمبل الكتالوج
+              </span>
+            </button>
+            {/* aside menu */}
+            <AsideMenu iconColor="black" lang={lang} />
+          </div>
         </nav>
       </Container>
     </div>

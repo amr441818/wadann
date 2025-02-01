@@ -1,10 +1,12 @@
 "use client"
 
-import React from "react";
 import "./contact.css";
+
+import CustomTextAria from "../shared/reusableComponents/CustomTextAria";
 import Image from "next/image";
 import InputComponent from "../shared/reusableComponents/InputComponent";
-import CustomTextAria from "../shared/reusableComponents/CustomTextAria";
+import React from "react";
+
 const ContactForm = () => {
   return (
     <div className="form-shadow flex flex-col gap-[56px] bg-white rounded-[24px] lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px] ">
@@ -12,7 +14,7 @@ const ContactForm = () => {
         تواصل معنا
       </h5>
 
-      <div className="grid grid-cols-12 gap-6  lg:gap-[100px]">
+      <div className="grid grid-cols-12 gap-6 lg:gap-[50px]">
         <div className="flex flex-col gap-[38px]   col-span-12  lg:col-span-6">
           <div className="flex gap-3 items-center">
             <Image
