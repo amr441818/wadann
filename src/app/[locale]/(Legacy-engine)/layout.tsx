@@ -11,6 +11,7 @@ import { ReactNode } from "react";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { getSettings } from "@/lib/serverActions";
 
 // Define the correct type for LayoutProps
 interface LayoutProps {
@@ -38,6 +39,8 @@ export default async function Layout({ children, params }: LayoutProps) {
   const messages = await getMessages();
 
   // Return the layout with NextIntlClientProvider
+  const {data} = await getSettings()
+  console.log('layout data' , data)
   return (
     <html lang={locale} dir={"rtl"} suppressHydrationWarning>
       <body className={`${cairo.className} bg-bodyColor`} dir={"rtl"}>
@@ -56,7 +59,7 @@ export default async function Layout({ children, params }: LayoutProps) {
               </div>
             </div>
             {children}
-            <Footer locale={locale || "ar"} />
+            <Footer data={data} locale={locale || "ar"} />
           </Providers>
         </NextIntlClientProvider>
       </body>

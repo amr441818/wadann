@@ -64,6 +64,7 @@ export default async function HomePage({ params }: LayoutProps) {
       <HeaderWrwpper
         data={homeData?.data?.sliders}
         height=" h-[580px] lg:h-[508px]"
+        // className="rounded-full"
         isVidoeOrslider
       >
        
@@ -127,7 +128,7 @@ export default async function HomePage({ params }: LayoutProps) {
       {/* <Events events={eventsData?.data} locale={(await params).locale} /> */}
 
       {/* <GetInTouchSection /> */}
-      <ContactForm/>
+      {/* <ContactForm/> */}
     </div>
   );
 }
