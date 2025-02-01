@@ -11,21 +11,23 @@ import { useTranslations } from "next-intl"
 
 import Image from "next/image"
 import Container from "../../container"
+import { Files } from "lucide-react"
 
 
-interface FileData {
+interface Slider {
     id: number;
-    file_name: string;
-    original_url: string;
-    extension: string;
-    size: number;
+    sort: number;
+    name: string;
+    content: string;
+    image: string;
+    link: string | null;
   }
  type sliderProps = {
-    files: FileData[]
+    files: Slider[]
  }
 export default function MainHeaderSlider(props:sliderProps) {
 
-  
+  console.log("filse" , props.files)
 
 
     const t = useTranslations() 
@@ -57,12 +59,15 @@ export default function MainHeaderSlider(props:sliderProps) {
                     {props?.files?.map((file, index)=> {
                         return (<> <SwiperSlide key={index} >
                             <div className="grid grid-cols-12 h-full w-full bg-primary">
-                                <div className="flex col-span-6 w-full items-end ">    <Image width={569} height={419} src='/assets/img/mainslider.png' alt={file?.file_name} className="!w-[569px] h-[419px] " /></div>
+                                <div className="flex col-span-6 w-full items-end ">  
+                                      <Image width={569} height={419} src={file?.image} alt={file?.name} className="!w-[569px] h-[419px] " />
+                                      
+                                      </div>
                                 <div className="flex w-full col-span-6 items-center justify-end">
 
                                     <div className="flex flex-col items-start w-full text-white gap-[26px]">
-                                        <h1 className="text-[35px] font-bold w-[334px]">شركة وادان للأبواب الخشبية والمصفحة</h1>
-                                        <p className="w-[291px] text-start text-[16px] text-gray-300">الأبواب المتميزة والإبداع هو عنوان نجاحنا نستخدم أفضل وأقوى الخامات لمنتجاتنا وثقة عملائنا هي عنواننا</p>
+                                        <h1 className="text-[35px] font-bold w-[334px]">    {file?.name}</h1>
+                                        <p className="w-[291px] text-start text-[16px] text-gray-300">  {file?.content}</p>
                                     </div>
                                 </div>
 

@@ -13,9 +13,10 @@ import Image from "next/image";
 
 import { Autoplay } from "swiper/modules";
 import { ItemSlider } from "@/app/components/Achievements";
+import { ProductItem } from "../../Products";
 
 
-export default function ProductSlider({data}: {data: ItemSlider[]}) {
+export default function ProductSlider({data}: {data: ProductItem[]}) {
   return (
     <>
     
@@ -60,20 +61,20 @@ export default function ProductSlider({data}: {data: ItemSlider[]}) {
 
 
             
-           {Array.from([1,3,4,5,6,7,8,9,10])?.map((item, index) => (<>
+           {data?.map((item:ProductItem, index) => (<>
             <SwiperSlide key={index}>
               
               <div className="flex  justify-center items-center w-full h-full flex-col gap-4">
                 <Image
                   width={133}
                   height={290}
-                  src="/assets/img/door.png"
+                  src={item.image}
                   className="w-[133px] h-[290px] "
                   alt=""
                 />
                 <div className="flex flex-col items-center gap-[5px]">
-                <span>TR - 33 - M4</span>
-            <p className="text-[11px] w-[80%] text-center">هنا نبذة تفصيلية بسيطة عن نوع الباب ومميزاته</p>
+                <span>{item?.short.ar}</span>
+            <p className="text-[11px] w-[80%] text-center">{item.short.ar}</p>
               </div>
                 </div>
             

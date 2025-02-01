@@ -5,12 +5,16 @@ import Image from "next/image";
 import { getBlog } from "@/lib/serverActions";
 
 interface LayoutProps {
-  params: Promise<{ locale: string | any }>; // Handle both promise and object
+  params: Promise<{ locale: string | any }>;
+  
+  slug: string // Handle both promise and object
 }
-export default async function BlogPage({ params }: LayoutProps) {
-  // @ts-ignore
-  /* const { locale, blog } = await params
-    const { data: blogData } = await getBlog(blog) */
+export default async function Page({ params, slug }: LayoutProps) {
+  
+//  const { locale } = await params
+// console.log("blog: ", slug);
+    // const { data: blogData } = await getBlog(1) 
+    // console.log(blogData)
 
   return (
     <div className="min-h-[438px] w-full pt-1">

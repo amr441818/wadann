@@ -1,17 +1,18 @@
 import BlogCard from "@/app/components/blogs/BlogCard"
 import Container from "@/app/components/shared/container"
 import { HeaderWrwpper } from "@/app/components/shared/main-header"
-import { getBlogs } from "@/lib/serverActions"
+import { getBlog } from "@/lib/serverActions"
 
 interface LayoutProps {
-    params: Promise<{ locale: string | any }> // Handle both promise and object
+    params: Promise<{ locale: string | any }>
+    blog:string // Handle both promise and object
 }
-export default async function BlogsPage({ params }: LayoutProps) {
+export default async function BlogsPage({ params, blog }: LayoutProps) {
     const { locale } = await params
 
-    const { data: blogs } = await getBlogs()
+    const { data: blogs } = await getBlog(blog)
 
-    console.log("dataaaaaaa", blogs)
+    // console.log("dataaaaaaa", blogs)
 
     // const blogData = {
     //     imageUrl:
@@ -28,9 +29,9 @@ export default async function BlogsPage({ params }: LayoutProps) {
     // const data = [blogData, blogData, blogData, blogData, blogData, blogData]
 
     return (
-        <div className="min-h-[438px] w-full">
+        <div className="min-h-[221px] w-full">
             <header>
-                <HeaderWrwpper imgUrl={blogs?.headerByImage?.image?.original_url}>
+                <HeaderWrwpper imgUrl={blogs?.image}>
                     <div className="flex flex-col items-center justify-center h-full w-full">
                         <div className="flex flex-col gap-6">
                             <h1 className="text-[40px] font-medium ">Blogs</h1>

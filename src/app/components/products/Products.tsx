@@ -4,21 +4,19 @@ import React from "react"
 import Container from "../shared/container"
 import ProductSlider from "./ProductSlider/slider/ProductSlider"
 
-interface Image {
-    id: number
-    file_name: string
-    original_url: string
-    extension: string
-    size: number
-}
 
-export interface ItemSlider {
-    id: number
-    title: string
-    image: Image
-}
+export interface ProductItem {
+    id: number;
+    title: string;
+    short: {
+      ar: string;
+      en: string;
+    };
+    image: string;
+  }
 
-const Products = ({ locale, achievements }: { locale: string; achievements: ItemSlider[] }) => {
+
+const Products = ({ locale, products }: { locale: string; products: ProductItem[] }) => {
     return (
         <Container>
             <div className="flex  flex-col gap-8">
@@ -29,7 +27,7 @@ const Products = ({ locale, achievements }: { locale: string; achievements: Item
                   
                 </div>
                 {/* @ts-ignore */}
-                <ProductSlider data={achievements?.data} />
+                <ProductSlider data={products} />
             </div>
         </Container>
     )

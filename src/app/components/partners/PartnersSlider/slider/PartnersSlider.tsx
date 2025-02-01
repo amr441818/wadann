@@ -12,10 +12,11 @@ import "./partners.css";
 import Image from "next/image";
 
 import { Autoplay } from "swiper/modules";
-import { ItemSlider } from "@/app/components/Achievements";
+import { ItemSlider } from "../../Partners";
 
 
 export default function PartnersSlider({data}: {data: ItemSlider[]}) {
+  console.log( 'data', data)
   return (
     <>
     
@@ -60,14 +61,14 @@ export default function PartnersSlider({data}: {data: ItemSlider[]}) {
 
 
             
-           {Array.from([1,3,4,5,6,7,8,9,10])?.map((item, index) => (<>
+           {data?.map((item:ItemSlider, index) => (<>
             <SwiperSlide key={index}>
               
               <div className="flex  justify-center items-center w-full h-full flex-col gap-4">
                 <Image
                   width={133}
                   height={290}
-                  src={`/assets/img/p${index==1? "2":"1"}.png`}
+                  src={item?.image}
                   className="w-[133px] h-[290px] "
                   alt=""
                 />

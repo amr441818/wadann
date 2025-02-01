@@ -1,5 +1,6 @@
 import {
   getHomeAchievementData,
+  getHomeData,
   getHomeEventsData,
   getHomeHeaderData,
   getHomeTeamData,
@@ -43,11 +44,11 @@ interface LayoutProps {
 export default async function HomePage({ params }: LayoutProps) {
   const { locale } = await params;
 
-  const headerdata = await getHomeHeaderData();
-  const achievementsData = await getHomeAchievementData();
-  const eventsData = await getHomeEventsData();
-  const teamData = await getHomeTeamData();
-  const whoWeAreData = await getHomeWhoWeAreData();
+  const homeData = await getHomeData();
+  // const achievementsData = await getHomeAchievementData();
+  // const eventsData = await getHomeEventsData();
+  // const teamData = await getHomeTeamData();
+  // const whoWeAreData = await getHomeWhoWeAreData();
 
   return (
     <div className="min-h-[438px] w-full flex flex-col gap-[96px] justify-center pb-10">
@@ -61,7 +62,7 @@ export default async function HomePage({ params }: LayoutProps) {
 
 
       <HeaderWrwpper
-        data={headerdata}
+        data={homeData?.data?.sliders}
         height=" h-[580px] lg:h-[508px]"
         isVidoeOrslider
       >
@@ -72,25 +73,23 @@ export default async function HomePage({ params }: LayoutProps) {
 
 
       <InfoSection
-        title="من نحن"
-        description={
-          "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد النصوص الأخرى إضاف إلى زيادة عدد الحروف التى يولدها التطبيق هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد النصوص الأخرى إضاف إلى زيادة عدد الحروف التى يولدها التطبيق"
-        }
-        image={teamData?.data?.image?.original_url}
+        title={homeData?.data?.about?.title}
+        description={homeData?.data?.about?.content}
+        image={homeData?.data?.about?.image}
         btnText="Book a Consultation"
         btnLink="/"
       />
  <Products
-        achievements={achievementsData?.data}
+        products={homeData?.data?.products}
         locale={(await params).locale}
       />
  <Partners
-        achievements={achievementsData?.data}
+        partners={homeData?.data?.partners}
         locale={(await params).locale}
       />
-<OurServices locale={(await params).locale} />
-<Statistics locale={(await params).locale} />
-<BlogsHome locale={(await params).locale} />
+<OurServices services={homeData?.data?.services} locale={(await params).locale} />
+<Statistics counters={homeData?.data?.counters} locale={(await params).locale} />
+<BlogsHome blogs={homeData?.data?.posts} locale={(await params).locale} />
 
 
       {/* <PropertyBanner locale={(await params).locale} /> */}

@@ -2,38 +2,41 @@
 
 import apiServiceCall from "@/utils/api/shared/apiServiceCall"
 
-export const getHomeHeaderData = async () => {
-    return apiServiceCall({ url: "slider" })
+export const getHomeData = async () => {
+    return apiServiceCall({ url: "home" })
 }
-export const getHomeAchievementData = async () => {
-    return apiServiceCall({ url: "achievement" })
+export const getBlog = async (id:string) => {
+    return apiServiceCall({ url: `posts/${id}` })
 }
-export const getHomeEventsData = async () => {
-    return apiServiceCall({ url: "event" })
-}
-export const getHomeTeamData = async () => {
-    return apiServiceCall({ url: "meet_our_teams" })
-}
-export const getHomeWhoWeAreData = async () => {
-    return apiServiceCall({ url: "whoweare" })
-}
-export const getHomePropertyBannerData = async () => {
-    return apiServiceCall({ url: "property" })
-}
-export const getHomePartnerBannerData = async () => {
-    return apiServiceCall({ url: "partner" })
-}
+// export const getHomeAchievementData = async () => {
+//     return apiServiceCall({ url: "achievement" })
+// }
+// export const getHomeEventsData = async () => {
+//     return apiServiceCall({ url: "event" })
+// }
+// export const getHomeTeamData = async () => {
+//     return apiServiceCall({ url: "meet_our_teams" })
+// }
+// export const getHomeWhoWeAreData = async () => {
+//     return apiServiceCall({ url: "whoweare" })
+// }
+// export const getHomePropertyBannerData = async () => {
+//     return apiServiceCall({ url: "property" })
+// }
+// export const getHomePartnerBannerData = async () => {
+//     return apiServiceCall({ url: "partner" })
+// }
 
-export const getBlogs = async () => {
-    return apiServiceCall({ url: "blog" })
-}
+// export const getBlogs = async () => {
+//     return apiServiceCall({ url: "blog" })
+// }
 
-export const getBlog = async (id: string) => {
-    return apiServiceCall({ url: `blog/${id}` })
-}
-export const getContactUs = async () => {
-    return apiServiceCall({ url: `setting/social` })
-}
+// export const getBlog = async (id: string) => {
+//     return apiServiceCall({ url: `blog/${id}` })
+// }
+// export const getContactUs = async () => {
+//     return apiServiceCall({ url: `setting/social` })
+// }
 
 export const getDevelopers = async () => {
     return apiServiceCall({ url: "developer" })

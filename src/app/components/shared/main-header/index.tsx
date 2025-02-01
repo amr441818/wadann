@@ -30,9 +30,9 @@ export const    HeaderWrwpper = (props: HeaderWrwpperProps) => {
             >
                     <Image src="/assets/img/sliderbg.png" alt="sliderbg" width={100} height={100}  className="absolute top-[50%] translate-y-[-50%]  "/>
                 <Container>
-                {props?.isVidoeOrslider && props?.data?.data?.images.length > 0 && (
-                    <MainHeaderSlider files={props?.data?.data?.images} />
-                )}
+                {/* {!props?.isVidoeOrslider && props?.data?.length > 0 && ( */}
+                    <MainHeaderSlider files={props?.data} />
+                {/* )} */}
                 </Container>
 
                 {/* {props?.isVidoeOrslider && props?.data?.data?.video !== null && (

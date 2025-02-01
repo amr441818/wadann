@@ -5,21 +5,15 @@ import Container from "../shared/container"
 import PartnersSlider from "./PartnersSlider/slider/PartnersSlider"
 
 
-interface Image {
-    id: number
-    file_name: string
-    original_url: string
-    extension: string
-    size: number
-}
+
 
 export interface ItemSlider {
     id: number
     title: string
-    image: Image
+    image: string
 }
 
-const Partners = ({ locale, achievements }: { locale: string; achievements: ItemSlider[] }) => {
+const Partners = ({ locale, partners }: { locale: string; partners: ItemSlider[] }) => {
     return (
         <Container>
             <div className="flex  flex-col gap-8">
@@ -30,7 +24,7 @@ const Partners = ({ locale, achievements }: { locale: string; achievements: Item
                   
                 </div>
                 {/* @ts-ignore */}
-                <PartnersSlider data={achievements?.data} />
+                <PartnersSlider data={partners} />
             </div>
         </Container>
     )
