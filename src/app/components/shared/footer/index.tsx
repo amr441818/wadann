@@ -1,9 +1,9 @@
+import ContactForm from "../../contactForm/ContactForm";
 import Container from "../container";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import MainLink from "../main-link";
 import logoServer from "@/public/logo.png";
-import ContactForm from "../../contactForm/ContactForm";
 
 // import logo from "../../../../../public/logo.png"
 
@@ -22,9 +22,9 @@ const Footer = async (params: any) => {
   ];
 
   return (
-    <footer className=" bg-primary text-white px-5 lg:px-0">
+    <footer className="relative bg-primary text-white px-5 lg:px-0 pt-[232px] mt-[232px]">
       <ContactForm data={params?.data?.contactus}/>
-      <Container>
+      <Container className="">
         {/* logo and links */}
         <div className="grid grid-cols-1 md:grid-cols-4 py-14 gap-3">
           <div className="flex justify-center md:justify-start max-md:items-center ">
