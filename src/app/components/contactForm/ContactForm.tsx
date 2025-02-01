@@ -1,20 +1,27 @@
-"use client"
+"use client";
 
 import "./contact.css";
 
-import CustomTextAria from "../shared/reusableComponents/CustomTextAria";
+
 import Image from "next/image";
 import InputComponent from "../shared/reusableComponents/InputComponent";
-import React from "react";
+import CustomTextAria from "../shared/reusableComponents/CustomTextAria";
+interface ContactUs {
+  mobile: string;
+  email: string;
+  address: string | null;
+  map_iframe: string;
+}
 
-const ContactForm = () => {
+const ContactForm = ({ data }: { data: ContactUs }) => {
+  console.log("data", data);
   return (
-    <div className="form-shadow flex flex-col gap-[56px] bg-white rounded-[24px] lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px] ">
+    <div className="form-shadow  flex flex-col gap-[56px] bg-white rounded-[24px] lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px] ">
       <h5 className="text-[24px] font-bold text-primary text-center">
         تواصل معنا
       </h5>
 
-      <div className="grid grid-cols-12 gap-6 lg:gap-[50px]">
+      <div className="grid grid-cols-12 gap-6  xxl:gap-[100px]">
         <div className="flex flex-col gap-[38px]   col-span-12  lg:col-span-6">
           <div className="flex gap-3 items-center">
             <Image
@@ -50,12 +57,12 @@ const ContactForm = () => {
                 name="message"
               />
             </div>
-            <button className="py-4 text-white text-[12px] bg-primary rounded-full">إرسال</button>
+            <button className="py-4 text-white text-[12px] bg-primary rounded-full">
+              إرسال
+            </button>
           </form>
         </div>
         <div className="flex  flex-col gap-4  col-span-12  lg:col-span-6">
-
-
           <div className="flex gap-[10px] items-center">
             <div className="flex items-center justify-center  w-[57px] h-[49px] rounded-full bg-[#f9f6ef]">
               <Image
@@ -67,8 +74,7 @@ const ContactForm = () => {
               />
             </div>
 
-            <p className="text-[#636363] font-medium">
-            +966 48505203            </p>
+            <p className="text-[#636363] font-medium">{data?.mobile} </p>
           </div>
           <div className="flex gap-[10px] items-center">
             <div className="flex items-center justify-center w-[57px] h-[49px] rounded-full bg-[#f9f6ef]">
@@ -81,8 +87,7 @@ const ContactForm = () => {
               />
             </div>
 
-            <p className="text-[#636363] font-medium">
-            info@wadaan.com            </p>
+            <p className="text-[#636363] font-medium">{data?.email} </p>
           </div>
           <div className="flex gap-3 items-center">
             <div className="flex items-center justify-center w-[57px] h-[49px] rounded-full  bg-[#f9f6ef]">
@@ -95,21 +100,13 @@ const ContactForm = () => {
               />
             </div>
 
-            <p className="text-[#636363] font-medium">
-            الرياض , شارع الصياد عمارة 14 الدور الاول            </p>
+            <p className="text-[#636363] font-medium">{data?.address}</p>
           </div>
 
-          <div>
-                    <iframe
-                        src={`https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d54702.98375643156!2d31.879389390!3d31.89389390!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1737055352590!5m2!1sar!2seg`}
-                        width="600"
-                        height="450"
-                        style={{ border: 0, width: "100%", height: "165px", borderRadius: "10px" }}
-                       allowFullScreen={false}
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                </div>
+          <div
+            className="w-[200px] h-[200px]"
+            dangerouslySetInnerHTML={{ __html: data?.map_iframe || "" }}
+          />
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ import { ReactNode } from "react";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { getSettings } from "@/lib/serverActions";
 
 // Define the correct type for LayoutProps
 interface LayoutProps {
@@ -38,14 +39,16 @@ export default async function Layout({ children, params }: LayoutProps) {
   const messages = await getMessages();
 
   // Return the layout with NextIntlClientProvider
+  const {data} = await getSettings()
+
   return (
     <html lang={locale} dir={"rtl"} suppressHydrationWarning>
       <body className={`${cairo.className} bg-bodyColor`} dir={"rtl"}>
         <NextIntlClientProvider locale={locale || "ar"} messages={messages}>
           <Providers locale={locale || "ar"}>
-            <Header lang={locale} />
+            <Header  lang={locale} />
 
-           <FixedSocial />
+           <FixedSocial  />
 
             <div className="fixed bottom-4 right-4 flex gap-5 flex-col z-[999]">
               <div className="bg-primary hover:bg-black/80 p-3 rounded-full duration-300">
@@ -56,7 +59,7 @@ export default async function Layout({ children, params }: LayoutProps) {
               </div>
             </div>
             {children}
-            <Footer locale={locale || "ar"} />
+            <Footer data={data} locale={locale || "ar"} />
           </Providers>
         </NextIntlClientProvider>
       </body>

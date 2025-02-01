@@ -8,6 +8,9 @@ export const getHomeData = async () => {
 export const getBlog = async (id:string) => {
     return apiServiceCall({ url: `posts/${id}` })
 }
+export const getSettings = async () => {
+    return apiServiceCall({ url: `settings` })
+}
 // export const getHomeAchievementData = async () => {
 //     return apiServiceCall({ url: "achievement" })
 // }

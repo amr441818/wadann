@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import MainLink from "../main-link";
 import logoServer from "@/public/logo.png";
+import ContactForm from "../../contactForm/ContactForm";
 
 // import logo from "../../../../../public/logo.png"
 
@@ -22,6 +23,7 @@ const Footer = async (params: any) => {
 
   return (
     <footer className=" bg-primary text-white px-5 lg:px-0">
+      <ContactForm data={params?.data?.contactus}/>
       <Container>
         {/* logo and links */}
         <div className="grid grid-cols-1 md:grid-cols-4 py-14 gap-3">
