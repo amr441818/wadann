@@ -42,8 +42,8 @@ export default async function Layout({ children, params }: LayoutProps) {
   const {data} = await getSettings()
 
   return (
-    <html lang={locale} dir={"rtl"} suppressHydrationWarning>
-      <body className={`${cairo.className} bg-bodyColor`} dir={"rtl"}>
+    <html lang={locale}  dir={locale === "ar" ? "rtl" : "ltr"} suppressHydrationWarning>
+      <body className={`${cairo.className} bg-bodyColor`} dir={locale === "ar" ? "rtl" : "ltr"}>
         <NextIntlClientProvider locale={locale || "ar"} messages={messages}>
           <Providers locale={locale || "ar"}>
             <Header catalog={data?.catalog}  lang={locale} />

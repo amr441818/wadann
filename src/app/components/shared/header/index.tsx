@@ -58,7 +58,6 @@ const Header = ({ lang, catalog }: { lang: string, catalog: string }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log("aaaaaaaaaaaa", window.scrollY);
       if (window.scrollY > 2) {
         setIsScrolled(true);
       } else {
