@@ -5,7 +5,7 @@ import React from "react";
 
 function page() {
   return (
-    <Container className="mb-10">
+    <Container className="mb-10 mt-32">
       <div>
         <InfoSection
           title="من نحن"

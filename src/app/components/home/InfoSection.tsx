@@ -27,20 +27,20 @@ function InfoSection({
     <section className="bg-background px-5 lg:px-0 mt-16">
       <Container>
         <div
-          className={`flex flex-col gap-7 ${
+          className={`flex flex-col gap-7 lg:gap-[95px] ${
             reverse ? "lg:flex-row-reverse" : "lg:flex-row"
           }  items-center`}
         >
-          <div className="w-full lg:w-1/2 mb-0 h-[350px]">
+          <div className="w-[30%] max-w-[300px] mb-0">
             <Image
-              width={100}
-              height={100}
+              width={1000}
+              height={1000}
               src={image}
               alt="Our Team"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-[300px] h-[300px] object-cover rounded-lg"
             />
           </div>
-          <div className="w-full lg:w-1/2 max-lg:mt-5">
+          <div className="w-[70%]  max-lg:mt-5">
             <h2
               className={`text-[32px] ${
                 reverse ? "" : "mb-5 lg:mb-7"

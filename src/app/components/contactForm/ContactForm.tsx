@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
 import "./contact.css";
+
+
 import Image from "next/image";
 import InputComponent from "../shared/reusableComponents/InputComponent";
 import CustomTextAria from "../shared/reusableComponents/CustomTextAria";
