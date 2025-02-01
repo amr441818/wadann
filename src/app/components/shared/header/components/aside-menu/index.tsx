@@ -36,7 +36,7 @@ const menuItems: NavbarMenueItem[] = [
     return (
         <>
             {/* menu icon */}
-            <div className="flex  items-center gap-[20px] text-base mr-7">
+            <div className="flex lg:hidden items-center gap-[20px] text-base mr-7">
                 <div className="flex items-center justify-center gap-5 cursor-pointer" onClick={() => setOpen(!open)}>
                     <Image
                         className="w-[20px] h-[20px]"
