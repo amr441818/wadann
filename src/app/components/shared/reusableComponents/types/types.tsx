@@ -61,13 +61,14 @@ export type tabelProps = {
 }
 
 export type CustomTextAriaProps = {
-    value: string
-    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+    value?: string
+    onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
     name: string
     placeholder: string
     label?: string
     labelLang?: string
     required?: boolean
+    register:any;
     className?: string
 }
 
@@ -77,13 +78,14 @@ export type PhoneValidationExampleProps = {
 }
 //components / reusableComponents/ inputComponnent
 export type customInputProps = {
+    register:any;
     label?: string
     labelLang?: string
     type: string
     placeholder: string
     name?: string
     value?: string
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
     className?: string
     required?: boolean
     disabled?: boolean

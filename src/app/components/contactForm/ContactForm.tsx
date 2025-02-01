@@ -6,6 +6,7 @@ import "./contact.css";
 import Image from "next/image";
 import InputComponent from "../shared/reusableComponents/InputComponent";
 import CustomTextAria from "../shared/reusableComponents/CustomTextAria";
+import { useForm } from "react-hook-form";
 interface ContactUs {
   mobile: string;
   email: string;
@@ -14,7 +15,17 @@ interface ContactUs {
 }
 
 const ContactForm = ({ data }: { data: ContactUs }) => {
-  console.log("data", data);
+ const {register, handleSubmit} = useForm({
+  defaultValues:{
+    name:'',
+    mobile:'',
+    message:'',
+  }
+  
+ })
+ const onSubmit = (data:any)=>{
+  console.log(data)
+}
   return (
     <div className="form-shadow  flex flex-col gap-[56px] bg-white rounded-[24px] lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px] ">
       <h5 className="text-[24px] font-bold text-primary text-center">
@@ -36,28 +47,28 @@ const ContactForm = ({ data }: { data: ContactUs }) => {
               قم بإرسال شكوتك أو مقترحاتك إلينا
             </p>
           </div>
-          <form className="flex flex-col gap-[14px] ">
+          <form  onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-[14px] ">
             <div className="flex flex-col gap-[9px]">
               <InputComponent
                 type="text"
                 placeholder="الاسم كاملا"
-                onChange={() => console.log("first")}
+                register={register}
                 name="name"
               />
               <InputComponent
                 type="text"
                 placeholder="رقم الجوال"
-                onChange={() => console.log("first")}
-                name="phone"
+                register={register}
+                name="mobile"
               />
               <CustomTextAria
                 placeholder=" نص الرسالة"
-                onChange={() => console.log("first")}
-                value=""
+                register={register}
+               
                 name="message"
               />
             </div>
-            <button className="py-4 text-white text-[12px] bg-primary rounded-full">
+            <button type="submit" className="py-4 text-white text-[12px] bg-primary rounded-full">
               إرسال
             </button>
           </form>

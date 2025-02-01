@@ -16,8 +16,8 @@ const CustomTextAria = (props: CustomTextAriaProps) => {
                 rows={4}
                 name={props?.name}
                 id="name"
-                onChange={props?.onChange}
-                value={props?.value}
+                {...props.register(props.name)}
+                
                 placeholder={props?.placeholder}
                 required={props.required ? props.required : false}
                 
