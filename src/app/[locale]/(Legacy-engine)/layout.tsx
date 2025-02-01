@@ -46,7 +46,7 @@ export default async function Layout({ children, params }: LayoutProps) {
       <body className={`${cairo.className} bg-bodyColor`} dir={"rtl"}>
         <NextIntlClientProvider locale={locale || "ar"} messages={messages}>
           <Providers locale={locale || "ar"}>
-            <Header  lang={locale} />
+            <Header catalog={data?.catalog}  lang={locale} />
 
            <FixedSocial  />
 

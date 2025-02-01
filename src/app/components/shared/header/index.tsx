@@ -14,7 +14,7 @@ import { NavbarMenueItem } from "@/types/shared";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 
-const Header = ({ lang }: { lang: string }) => {
+const Header = ({ lang, catalog }: { lang: string, catalog: string }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const t = useTranslations("Header");
   const menuItems: NavbarMenueItem[] = [
@@ -119,8 +119,8 @@ const Header = ({ lang }: { lang: string }) => {
                         </Button>
                         <Button className="bg-primaryBg px-10 text-initial h-[44px]">{t("login")}</Button> */}
             </div>
-            {/* download */}
-            <button className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3 rounded-3xl">
+           
+            <a href={`${catalog}`} download  rel="noopener noreferrer" target="_blank"  className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3 rounded-3xl">
               <Icon icon="material-symbols:download-rounded" />
               <span
                 className="whitespace-nowrap hidden sm:inline-block
@@ -128,7 +128,7 @@ const Header = ({ lang }: { lang: string }) => {
               >
                 تحمبل الكتالوج
               </span>
-            </button>
+            </a>
             {/* aside menu */}
             <AsideMenu iconColor="black" lang={lang} />
           </div>
