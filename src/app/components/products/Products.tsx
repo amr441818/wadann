@@ -34,7 +34,7 @@ const Products = ({
             </h6>
           </div>
           {/* @ts-ignore */}
-          <ProductSlider data={products} />
+          <ProductSlider data={products} locale={locale}/>
         </div>
       </Container>
     </div>

@@ -8,9 +8,16 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ProductItem } from "../../Products";
 
-export default function ProductSlider({ data }: { data: ProductItem[] }) {
+export default function ProductSlider({
+  data,
+  locale,
+}: {
+  data: ProductItem[];
+  locale: string;
+}) {
   return (
     <>
       <div dir="ltr">
@@ -75,13 +82,15 @@ export default function ProductSlider({ data }: { data: ProductItem[] }) {
             <>
               <SwiperSlide key={index}>
                 <div className="flex  justify-center items-center w-full h-full flex-col gap-4">
-                  <Image
-                    width={133}
-                    height={290}
-                    src={item.image}
-                    className="w-[133px] h-[290px] "
-                    alt=""
-                  />
+                  <Link href={`/${locale}/products/${item?.id}` || "/products/1"}>
+                    <Image
+                      width={133}
+                      height={290}
+                      src={item.image}
+                      className="w-[133px] h-[290px] "
+                      alt=""
+                    />
+                  </Link>
                   <div className="flex flex-col items-center gap-[5px]">
                     <span>{item?.short.ar}</span>
                     <p className="text-[11px] w-[80%] text-center">
