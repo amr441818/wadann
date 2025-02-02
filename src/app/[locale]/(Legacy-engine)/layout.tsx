@@ -1,3 +1,4 @@
+import "@/styles/fonts.css";
 import "@/styles/globals.css";
 
 import { Cairo } from "next/font/google";

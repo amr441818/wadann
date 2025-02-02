@@ -77,9 +77,12 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: "29LTBukra", sans-serif;
   }
   body {
     @apply bg-background text-foreground;
+
+    font-family: "29LTBukra", sans-serif;
   }
   .unique-h {
     @apply after:block after:w-[50px] after:h-[20px] after:border-b-[10px] ltr:after:border-l-[10px] rtl:after:border-r-[10px] after:-translate-y-4 ltr:after:-translate-x-4 rtl:after:translate-x-4 after:absolute after:z-[-10] relative after:border-[rgba(180,147,69,0.35)];

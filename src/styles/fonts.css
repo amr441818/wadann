@@ -1,0 +1,31 @@
+@font-face {
+    font-family: '29LTBukra';
+    src: url('../../public/font/29ltbukra/29ltbukraregular.otf') format('opentype'),
+         url('../../public/font/29ltbukra/29ltbukraregular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: '29LTBukra';
+    src: url('../../public/font/29ltbukra/29ltbukrabold.otf') format('opentype'),
+         url('../../public/font/29ltbukra/29ltbukrabold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: '29LTBukra';
+    src: url('../../public/font/29ltbukra/29ltbukrabolditalic.otf') format('opentype'),
+         url('../../public/font/29ltbukra/29ltbukrabolditalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: '29LTBukra';
+    src: url('../../public/font/29ltbukra/29ltbukralight.otf') format('opentype'),
+         url('../../public/font/29ltbukra/29ltbukralight.ttf') format('truetype');
+    font-weight: 300; /* Light */
+    font-style: normal;
+  }
