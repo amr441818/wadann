@@ -1,3 +1,4 @@
+"use client";
 // @ts-nocheck
 
 import Container from "../shared/container";
@@ -5,6 +6,7 @@ import Image from "next/image";
 import MainLink from "../shared/main-link";
 import React from "react";
 import myImage from "@/public/card.png";
+import { useTranslations } from "next-intl";
 
 function InfoSection({
   title,
@@ -23,6 +25,8 @@ function InfoSection({
   reverse?: boolean;
   noButton?: boolean;
 }) {
+  const t = useTranslations("WhoWeAre");
+  
   return (
     <section className="bg-background px-5 lg:px-0 mt-16">
       <Container>
@@ -42,11 +46,11 @@ function InfoSection({
           </div>
           <div className="w-full lg:w-[70%]  max-lg:mt-5">
             <h2
-              className={`text-[32px] ${
+              className={`unique-h text-[32px] ${
                 reverse ? "" : "mb-5 lg:mb-7"
               } text-primary font-bold`}
             >
-              {title}
+               {t("who-we-are")} 
             </h2>
             <p className="text-muted-foreground mb-4 font-light text-xl max-lg:mb-5">
               {description}

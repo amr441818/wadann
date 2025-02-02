@@ -14,17 +14,17 @@ import { NavbarMenueItem } from "@/types/shared";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 
-const Header = ({ lang, catalog }: { lang: string, catalog: string }) => {
+const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const t = useTranslations("Header");
   const menuItems: NavbarMenueItem[] = [
     { value: t("home"), path: "/" },
     { value: t("whoWeAre"), path: "/who-we-are" },
-    { value: t("products"), path: "/products" },
-    { value: t("doorDesign"), path: "/door-design" },
-    { value: t("ourPartners"), path: "/our-partners" },
+    { value: t("products"), path: "/#products" },
+    { value: t("doorDesign"), path: "//" },
+    { value: t("ourPartners"), path: "/#our-partners" },
     { value: t("blogs"), path: "/blogs" },
-    { value: t("contactUs"), path: "/contact-us" },
+    { value: t("contactUs"), path: "/#contact-us" },
     // { value: t("profile"), path: "/profile" },
     // { value: t("myAccount"), path: "/my-account" },
   ];
@@ -98,7 +98,14 @@ const Header = ({ lang, catalog }: { lang: string, catalog: string }) => {
                   <Link
                     href={item.path}
                     locale={lang}
-                    className="text-[16px] font-medium text-xs"
+                    className={`
+                    ${
+                      item.path === "/"
+                        ? "unique-h after:border-b-2 ltr:after:border-l-2 rtl:after:border-r-2 after:w-[20px] after:h-[18px]"
+                        : ""
+                    }
+                    text-[16px] font-medium text-xs
+                    `}
                   >
                     {item.value}
                   </Link>
@@ -118,14 +125,19 @@ const Header = ({ lang, catalog }: { lang: string, catalog: string }) => {
                         </Button>
                         <Button className="bg-primaryBg px-10 text-initial h-[44px]">{t("login")}</Button> */}
             </div>
-           
-            <a href={`${catalog}`} download  rel="noopener noreferrer" target="_blank"  className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3 rounded-3xl">
+            <a
+              href={`${catalog}`}
+              download
+              rel="noopener noreferrer"
+              target="_blank"
+              className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3 rounded-3xl"
+            >
               <Icon icon="material-symbols:download-rounded" />
               <span
                 className="whitespace-nowrap hidden sm:inline-block
               "
               >
-                تحمبل الكتالوج
+                {t("downloadCatalog")}
               </span>
             </a>
             {/* aside menu */}

@@ -8,6 +8,7 @@ import InputComponent from "../shared/reusableComponents/InputComponent";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
+import { useTranslations } from "next-intl";
 
 interface ContactUs {
   mobile: string;
@@ -50,12 +51,15 @@ const ContactForm = ({ data }: { data: ContactUs }) => {
     console.log(data);
     mutate(data);
   };
-
+  const t = useTranslations("Header");
   return (
     <div className="lg:absolute top-0 lg:-translate-y-1/2 left-1/2 lg:-translate-x-1/2 form-shadow flex flex-col gap-[56px] bg-white rounded-[24px] lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px] ">
-      <h5 className="text-[24px] font-bold text-primary text-center">
-        تواصل معنا
-      </h5>
+      <div className="flex items-center justify-center">
+        
+        <h5 className="unique-h w-fit text-[24px] font-bold text-primary text-center">
+          {t("contact-us")}
+        </h5>
+      </div>
 
       <div className="grid grid-cols-12 gap-6  xxl:gap-[100px]">
         <div className="flex flex-col gap-[38px]   col-span-12  lg:col-span-6">
