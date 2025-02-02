@@ -55,7 +55,7 @@ function ProductConect({ productData }: any) {
                     width={400}
                     alt={`door`}
                     height={400}
-                    className="w-full h-[500px] object-cover "
+                    className="w-full h-[500px] object-contain "
                   />
                 </div>
               </SwiperSlide>
@@ -81,7 +81,7 @@ function ProductConect({ productData }: any) {
                     width={400}
                     height={400}
                     alt={`door`}
-                    className="w-[300px] h-[120px] object-cover rounded-md opacity-60 hover:opacity-100 transition-opacity"
+                    className="w-[200px] h-[120px] object-contain rounded-md opacity-60 hover:opacity-100 transition-opacity"
                   />
                 </div>
               </SwiperSlide>
