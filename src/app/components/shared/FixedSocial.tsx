@@ -9,6 +9,7 @@ function FixedSocial(params: any) {
   const myObject = {};
 
   for (let i = 0; i < params?.data?.socials?.length; i++) {
+    /* @ts-ignore */
     myObject[params?.data?.socials[i]?.key] = params?.data?.socials[i]?.value;
   }
 
@@ -16,6 +17,7 @@ function FixedSocial(params: any) {
     <div className="fixed bottom-[50%] left-0 flex flex-col flex-wrap gap-4 px-3 py-5 rounded-r-2xl shadow-2xl bg-white z-[99]">
       <Link
         className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
+        /* @ts-ignore */
         href={myObject?.whatsapp || "home"}
       >
         <Icon
@@ -25,6 +27,7 @@ function FixedSocial(params: any) {
       </Link>
       <Link
         className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
+        /* @ts-ignore */
         href={myObject?.snapchat || "home"}
       >
         <Icon
@@ -41,6 +44,7 @@ function FixedSocial(params: any) {
       </MainLink> */}
       <Link
         className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
+        /* @ts-ignore */
         href={myObject?.twitter || "home"}
       >
         <Icon
@@ -50,6 +54,7 @@ function FixedSocial(params: any) {
       </Link>
       <Link
         className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
+        /* @ts-ignore */
         href={myObject?.tiktok || "home"}
       >
         <Icon

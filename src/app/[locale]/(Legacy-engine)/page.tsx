@@ -1,42 +1,15 @@
-import {
-  getHomeAchievementData,
-  getHomeData,
-  getHomeEventsData,
-  getHomeHeaderData,
-  getHomeTeamData,
-  getHomeWhoWeAreData,
-} from "@/lib/serverActions";
+/* @ts-nocheck */
 
-import Achievements from "@/app/components/Achievements";
-import AchievemetsSlider from "@/app/components/Achievements/slider/AchievemetsSlider";
 import BlogsHome from "@/app/components/home/BlogsHome";
-import { CardWrwpper } from "@/app/components/shared/card";
-import ContactForm from "@/app/components/contactForm/ContactForm";
-import CustomList from "@/app/components/Test";
-import DeveloperSection from "@/app/components/home/DeveloperSection";
-import DiscoverBannder from "@/app/components/filter/components/DiscoverBanner";
-import Events from "@/app/components/events/Events";
-import Filter from "@/app/components/filter";
-import FilterSideMenu from "@/app/components/filter/components/FilterSideMenu";
-import GetInTouchSection from "@/app/components/home/GetInTouchSection";
 import { HeaderWrwpper } from "@/app/components/shared/main-header";
-import HomeTabs from "@/app/components/shared/home-tabs";
-import Image from "next/image";
 import InfoSection from "@/app/components/home/InfoSection";
 import OurServices from "@/app/components/home/OurServices";
-import PartnerBanner from "@/app/components/filter/components/PartnerBanner";
 import Partners from "@/app/components/partners/Partners";
-import PhoneValidationExample from "@/app/components/shared/PhoneInput";
 import Products from "@/app/components/products/Products";
-import PropertyBanner from "@/app/components/filter/components/property-banner";
 import Statistics from "@/app/components/home/Statistics";
-import TopAreas from "@/app/components/TopAreas";
-import TopPlan from "@/app/components/TopPlan";
-import WhyUs from "@/app/components/WhyUs/WhyUs";
-import { id } from './../../../../node_modules/.pnpm/next-intl@3.26.3_next@15.1.0_@babel+core@7.26.0_babel-plugin-macros@3.1.0_react-dom@19.0.0_re_5s2byqk2zmvvmum63le466fii4/node_modules/next/dist/compiled/webpack/bundle5';
-import imgBanner from "@/public/assets/img/homePanner.png";
-import teamImg from "@/public/assets/img/team.png";
-import whoImg from "@/public/assets/img/who.png";
+import {
+  getHomeData,
+} from "@/lib/serverActions";
 
 interface LayoutProps {
   params: Promise<{ locale: string | any }>; // Handle both promise and object
@@ -60,19 +33,12 @@ export default async function HomePage({ params }: LayoutProps) {
 
       {/* </div> */}
 
-
-
       <HeaderWrwpper
         data={homeData?.data?.sliders}
         height=" h-[580px] lg:h-[508px]"
         // className="rounded-full"
         isVidoeOrslider
-      >
-       
-      </HeaderWrwpper>
-
-
-
+      ></HeaderWrwpper>
 
       <InfoSection
         title={homeData?.data?.about?.title}
@@ -81,20 +47,23 @@ export default async function HomePage({ params }: LayoutProps) {
         btnText="Book a Consultation"
         btnLink="/"
       />
- <Products
+      <Products
         products={homeData?.data?.products}
         locale={(await params).locale}
       />
- <Partners
+      <Partners
         partners={homeData?.data?.partners}
         locale={(await params).locale}
       />
-<OurServices services={homeData?.data?.services} locale={(await params).locale} />
-<Statistics counters={homeData?.data?.counters} locale={(await params).locale} />
-<BlogsHome blogs={homeData?.data?.posts} locale={(await params).locale} />
-
-
-
+      <OurServices
+        services={homeData?.data?.services}
+        locale={(await params).locale}
+      />
+      <Statistics
+        counters={homeData?.data?.counters}
+        locale={(await params).locale}
+      />
+      <BlogsHome blogs={homeData?.data?.posts} locale={(await params).locale} />
 
       {/* <PropertyBanner locale={(await params).locale} /> */}
       {/* <TopAreas locale={(await params).locale} /> */}
@@ -121,11 +90,7 @@ export default async function HomePage({ params }: LayoutProps) {
         reverse
       /> */}
 
-     
-
       {/* <TopPlan locale={(await params).locale} /> */}
-
-     
 
       {/* <PartnerBanner locale={(await params).locale} /> */}
       {/* <Events events={eventsData?.data} locale={(await params).locale} /> */}

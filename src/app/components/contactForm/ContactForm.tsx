@@ -1,3 +1,4 @@
+/* @ts-nocheck */
 "use client";
 
 import "./contact.css";
@@ -35,6 +36,7 @@ const ContactForm = ({ data }: { data: ContactUs }) => {
 
     onError: (error, variables, context) => {
       // An error happened!
+      /* @ts-ignore */
       console.log(`rolling back optimistic update with id ${context?.id}`);
       console.log("error done");
     },

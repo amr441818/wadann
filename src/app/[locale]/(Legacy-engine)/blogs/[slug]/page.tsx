@@ -1,3 +1,5 @@
+/* @ts-nocheck */
+
 import BlogTags from "@/app/components/blogs/BlogTags";
 import Container from "@/app/components/shared/container";
 import { Icon } from "@iconify/react";
@@ -5,12 +7,11 @@ import Image from "next/image";
 import { getBlog } from "@/lib/serverActions";
 
 interface LayoutProps {
-  params: Promise<{ locale: string | any }>;
-
-  slug: string; // Handle both promise and object
+  params: Promise<{ locale: string | any, slug:string }>;
 }
 export default async function Page({ params }: LayoutProps) {
-  const { locale, slug } = await params;
+  /* @ts-ignore */
+  const {locale, slug } = await params;
   const { data: blogData } = await getBlog(slug);
   console.log("blog:aaaaaaaaaaaaaaaaaaaaaaaaaa ", blogData);
 

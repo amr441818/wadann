@@ -1,13 +1,8 @@
 import ContactForm from "../../contactForm/ContactForm";
 import Container from "../container";
-import { Icon } from "@iconify/react";
 import Image from "next/image";
-import Link from "next/link";
-import MainLink from "../main-link";
 import RightSideFooter from "./RightSideFooter";
 import logoServer from "@/public/logo.png";
-
-// import logo from "../../../../../public/logo.png"
 
 const Footer = async (params: any) => {
   const { locale: language } = await params;
