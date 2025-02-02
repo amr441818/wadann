@@ -1,6 +1,5 @@
 "use client";
 
-import "swiper/css/pagination";
 import "../Achievements/slider/AchievemetsSlider.css";
 
 import BlogCard from "../blogs/BlogCard";

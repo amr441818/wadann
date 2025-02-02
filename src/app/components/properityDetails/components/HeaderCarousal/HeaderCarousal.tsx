@@ -1,18 +1,27 @@
 "use client"
-import { Swiper, SwiperSlide } from "swiper/react"
 
-// Import Swiper styles
-import "swiper/css"
-import "swiper/css/pagination"
-import "swiper/css/navigation"
 import "./headerCarousal.css"
 
-// import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules"
-import { useTranslations } from "next-intl"
-import Link from "next/link"
-import Image from "next/image"
+import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
 import { useEffect, useState } from "react"
+
+import Image from "next/image"
+import Link from "next/link"
+import { useTranslations } from "next-intl"
+
+// Import Swiper styles
+
+
+
+
+
+// import required modules
+
+
+
+
+
 // Importing the translation hook
 type fileType= {
   id: number,
