@@ -66,6 +66,7 @@ const DoorSlider = () => {
 
         {/* Thumbnail Slider */}
         <Swiper
+        //@ts-ignore
           onSwiper={setThumbsSwiper}
           modules={[FreeMode, Navigation, Thumbs]}
           spaceBetween={10}

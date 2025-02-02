@@ -79,7 +79,7 @@ const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
       <Container>
         <nav className="flex items-center justify-between ">
           {/* logo */}
-          <div>
+          <Link href="/">
             <Image
               src={"/logo.png"}
               width={100}
@@ -88,7 +88,7 @@ const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
               className="h-[100px] w-[100px]"
               priority
             />
-          </div>
+          </Link>
 
           {/* links */}
           <div>
