@@ -47,7 +47,7 @@ function ProductConect({ productData }: any) {
             thumbs={{ swiper: thumbsSwiper }}
             className="rounded-lg shadow-xl mb-2 [&_.swiper-button-prev]:!hidden [&_.swiper-button-next]:!hidden h-[500px]"
           >
-            {productData?.images?.map((door) => (
+            {productData?.images?.map((door:any) => (
               <SwiperSlide key={door.id}>
                 <div className="aspect-[2/3] relative">
                   <Image
@@ -64,6 +64,7 @@ function ProductConect({ productData }: any) {
 
           {/* Thumbnail Slider */}
           <Swiper
+          //@ts-ignore
             onSwiper={setThumbsSwiper}
             modules={[FreeMode, Navigation, Thumbs]}
             spaceBetween={10}
@@ -73,7 +74,7 @@ function ProductConect({ productData }: any) {
             watchSlidesProgress={true}
             className="thumbs-slider h-[500px] "
           >
-            {productData?.images?.map((door) => (
+            {productData?.images?.map((door:any) => (
               <SwiperSlide key={door.id} className="cursor-pointer">
                 <div className="aspect-[2/3] relative">
                   <Image
