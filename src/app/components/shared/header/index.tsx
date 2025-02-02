@@ -21,7 +21,7 @@ const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
     { value: t("home"), path: "/" },
     { value: t("whoWeAre"), path: "/who-we-are" },
     { value: t("products"), path: "/#products" },
-    { value: t("doorDesign"), path: "//" },
+    { value: t("doorDesign"), path: "/design-door" },
     { value: t("ourPartners"), path: "/#our-partners" },
     { value: t("blogs"), path: "/blogs" },
     { value: t("contactUs"), path: "/#contact-us" },

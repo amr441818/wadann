@@ -40,7 +40,7 @@ export default async function Layout({ children, params }: LayoutProps) {
   const messages = await getMessages();
 
   // Return the layout with NextIntlClientProvider
-  const { data } = await getSettings();
+  const { data } = await getSettings(locale);
 
   console.log("data w3e neeeeeed", data);
 
