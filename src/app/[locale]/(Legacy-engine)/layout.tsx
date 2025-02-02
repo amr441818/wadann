@@ -4,14 +4,14 @@ import { Cairo } from "next/font/google";
 import FixedSocial from "@/app/components/shared/FixedSocial";
 import Footer from "@/app/components/shared/footer";
 import Header from "@/app/components/shared/header";
-import { Icon } from "@iconify/react";
 import { NextIntlClientProvider } from "next-intl";
 import Providers from "@/styles/providers";
 import { ReactNode } from "react";
+import WhatsApp from "@/app/components/WhatsApp";
 import { getMessages } from "next-intl/server";
+import { getSettings } from "@/lib/serverActions";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { getSettings } from "@/lib/serverActions";
 
 // Define the correct type for LayoutProps
 interface LayoutProps {
@@ -39,25 +39,28 @@ export default async function Layout({ children, params }: LayoutProps) {
   const messages = await getMessages();
 
   // Return the layout with NextIntlClientProvider
-  const {data} = await getSettings()
+  const { data } = await getSettings();
+
+  console.log("data w3e neeeeeed", data);
 
   return (
-    <html lang={locale}  dir={locale === "ar" ? "rtl" : "ltr"} suppressHydrationWarning>
-      <body className={`${cairo.className} bg-bodyColor`} dir={locale === "ar" ? "rtl" : "ltr"}>
+    <html
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      suppressHydrationWarning
+    >
+      <body
+        className={`${cairo.className} bg-bodyColor`}
+        dir={locale === "ar" ? "rtl" : "ltr"}
+      >
         <NextIntlClientProvider locale={locale || "ar"} messages={messages}>
           <Providers locale={locale || "ar"}>
-            <Header catalog={data?.catalog}  lang={locale} />
+            <Header catalog={data?.catalog} lang={locale} />
 
-           <FixedSocial  />
+            <FixedSocial data={data} />
 
-            <div className="fixed bottom-4 right-4 flex gap-5 flex-col z-[999]">
-              <div className="bg-primary hover:bg-black/80 p-3 rounded-full duration-300">
-                <Icon
-                  className="text-white text-3xl"
-                  icon="hugeicons:whatsapp"
-                />
-              </div>
-            </div>
+            <WhatsApp link={data?.whatsapp} />
+
             {children}
             <Footer data={data} locale={locale || "ar"} />
           </Providers>

@@ -31,7 +31,7 @@ function InfoSection({
             reverse ? "lg:flex-row-reverse" : "lg:flex-row"
           }  items-center`}
         >
-          <div className="w-[30%] max-w-[300px] mb-0">
+          <div className="lg:w-[30%] lg:max-w-[300px] mb-0">
             <Image
               width={1000}
               height={1000}
@@ -40,7 +40,7 @@ function InfoSection({
               className="w-[300px] h-[300px] object-cover rounded-lg"
             />
           </div>
-          <div className="w-[70%]  max-lg:mt-5">
+          <div className="w-full lg:w-[70%]  max-lg:mt-5">
             <h2
               className={`text-[32px] ${
                 reverse ? "" : "mb-5 lg:mb-7"

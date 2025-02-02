@@ -1,10 +1,11 @@
+import './blog.css'
+
 import BlogTags from "./BlogTags";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import MainLink from "../shared/main-link";
-import logo from "@/public/logo.png";
 import { Post } from "../home/BlogsHome";
-import './blog.css'
+import logo from "@/public/logo.png";
 
 const BlogCard = ({ blogData, locale }: { blogData: Post; locale: any }) => {
   return (
@@ -15,13 +16,13 @@ const BlogCard = ({ blogData, locale }: { blogData: Post; locale: any }) => {
           src={blogData?.image}
           width={200}
           height={200}
-          alt={blogData.title}
+          alt={blogData.title || "no title"}
         />
       </div>
       <div className="px-1 py-4 bg-white">
         <div className="pb-2">
           <div className="font-medium text-sm mb-1">
-            {blogData.title}
+            {blogData.title || "no title"}
           </div>
           <div className="py-2 text-primary flex gap-2 items-center">
             <Icon icon="fa6-solid:arrow-right-long" className="rotate-180" />
