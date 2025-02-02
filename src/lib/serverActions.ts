@@ -32,8 +32,10 @@ export const getSettings = async (locale:string) => {
 //     return apiServiceCall({ url: "partner" })
 // }
 
-export const getBlogs = async () => {
-  return apiServiceCall({ url: "posts" });
+export const getBlogs = async (locale:string) => {
+  return apiServiceCall({ url: "posts" ,headers:{
+    "Accept-Language": locale
+  }});
 };
 
 export const getBlog = async (id: string, locale: string) => {
@@ -72,15 +74,19 @@ export const getAboutUs = async () => {
 export const getHomeTopAreasData = async () => {
   return apiServiceCall({ url: "area/highlighted_areas" });
 };
+
 export const getHomeWhyChooseUsData = async () => {
   return apiServiceCall({ url: "whychooseus" });
 };
+
 export const getHomeDeveloperData = async () => {
   return apiServiceCall({ url: "developer" });
 };
+
 export const getHomeTopPalanProperyData = async () => {
   return apiServiceCall({ url: "product" });
 };
+
 export const getSpacificProperyData = async (slug: string) => {
   return apiServiceCall({ url: `product/${slug}` });
 };

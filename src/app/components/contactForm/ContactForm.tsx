@@ -28,6 +28,7 @@ const ContactForm = ({ data }: { data: ContactUs }) => {
   });
 
   const { mutate, isError, isSuccess, isPending } = useMutation({
+
     mutationFn: (data) =>
       axios.post(
         "https://almasader.net/wadan/backend/public/api/contactus",
@@ -88,17 +89,20 @@ const ContactForm = ({ data }: { data: ContactUs }) => {
                 placeholder="الاسم كاملا"
                 register={register}
                 name="name"
+                required
               />
               <InputComponent
-                type="text"
+                type="number"
                 placeholder="رقم الجوال"
                 register={register}
                 name="mobile"
+                required
               />
               <CustomTextAria
                 placeholder=" نص الرسالة"
                 register={register}
                 name="message"
+                required
               />
             </div>
             {isError && (
