@@ -1,6 +1,5 @@
 "use client";
 
-import "swiper/css/pagination";
 import "./productSlider.css";
 
 import { Autoplay, Navigation } from "swiper/modules";
@@ -18,6 +17,8 @@ export default function ProductSlider({
   data: ProductItem[];
   locale: string;
 }) {
+
+  
   return (
     <>
       <div dir="ltr">
@@ -62,23 +63,7 @@ export default function ProductSlider({
             },
           }}
         >
-          {[
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-            ...data,
-          ]?.map((item: ProductItem, index) => (
+          {data?.map((item: ProductItem, index) => (
             <>
               <SwiperSlide key={index}>
                 <div className="flex  justify-center items-center w-full h-full flex-col gap-4">

@@ -36,8 +36,13 @@ export const getBlog = async (id: string) => {
   return apiServiceCall({ url: `posts/${id}` });
 };
 // export const getContactUs = async () => {
-//     return apiServiceCall({ url: `setting/social` })
-// }
+  //     return apiServiceCall({ url: `setting/social` })
+  // }
+  
+  
+  export const getProduct = async (id: string) => {
+    return apiServiceCall({ url: `products/${id}` });
+  };
 
 export const getDevelopers = async () => {
   return apiServiceCall({ url: "developer" });

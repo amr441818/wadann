@@ -1,11 +1,11 @@
 "use client"
 
-import { Swiper, SwiperSlide } from "swiper/react"
-import MainLink from "../shared/main-link"
-import { Autoplay } from "swiper/modules"
-import "swiper/css/pagination"
-
 import "../Achievements/slider/AchievemetsSlider.css"
+
+import { Swiper, SwiperSlide } from "swiper/react"
+
+import { Autoplay } from "swiper/modules"
+import MainLink from "../shared/main-link"
 
 function DeveloperSlider({ reverse, locale, data }: { reverse?: boolean; locale: string; data: any[] }) {
     console.log("datazzzzzzzz", data)

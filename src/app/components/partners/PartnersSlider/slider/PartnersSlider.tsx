@@ -1,6 +1,5 @@
 "use client";
 
-import "swiper/css/pagination";
 import "./partners.css";
 
 import { Autoplay, Navigation } from "swiper/modules";
@@ -56,7 +55,7 @@ export default function PartnersSlider({ data }: { data: ItemSlider[] }) {
             },
           }}
         >
-          {[...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data]?.map((item: ItemSlider, index) => (
+          {data?.map((item: ItemSlider, index) => (
             <>
               <SwiperSlide key={index}>
                 <div className="flex  justify-center items-center w-full h-full flex-col gap-4">

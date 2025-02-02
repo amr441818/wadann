@@ -1,5 +1,10 @@
 import "@/styles/fonts.css";
 import "@/styles/globals.css";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import "swiper/css/pagination";
 
 import { Cairo } from "next/font/google";
 import FixedSocial from "@/app/components/shared/FixedSocial";

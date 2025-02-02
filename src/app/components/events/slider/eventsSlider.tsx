@@ -1,24 +1,37 @@
 "use client";
 
+import "./eventsSlider.css";
+
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-import "./eventsSlider.css";
-// import required modules
-// import { Pagination } from 'swiper/modules';
+import { Autoplay } from "swiper/modules";
+import Container from "../../shared/container";
 import Image from "next/image";
+import { ItemSlider } from "../../Achievements";
 import e1 from "@/public/assets/img/e1.png";
 import e2 from "@/public/assets/img/e2.png";
 import e3 from "@/public/assets/img/e3.png";
 import e4 from "@/public/assets/img/e4.png";
-import Container from "../../shared/container";
-import { Autoplay } from "swiper/modules";
-import { ItemSlider } from "../../Achievements";
+
+// Import Swiper React components
+
+
+// Import Swiper styles
+
+
+
+
+// import required modules
+// import { Pagination } from 'swiper/modules';
+
+
+
+
+
+
+
+
 
 export default function EventsSlider({events} :{events: ItemSlider[]}) {
   return (
