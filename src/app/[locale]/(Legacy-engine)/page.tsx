@@ -18,7 +18,7 @@ interface LayoutProps {
 export default async function HomePage({ params }: LayoutProps) {
   const { locale } = await params;
 
-  const homeData = await getHomeData();
+  const homeData = await getHomeData(locale);
   // const achievementsData = await getHomeAchievementData();
   // const eventsData = await getHomeEventsData();
   // const teamData = await getHomeTeamData();

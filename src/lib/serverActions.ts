@@ -2,12 +2,16 @@
 
 import apiServiceCall from "@/utils/api/shared/apiServiceCall";
 
-export const getHomeData = async () => {
-  return apiServiceCall({ url: "home" });
+export const getHomeData = async (locale:string) => {
+  return apiServiceCall({ url: "home", headers:{
+    "Accept-Language": locale
+  } });
 };
 
-export const getSettings = async () => {
-  return apiServiceCall({ url: `settings` });
+export const getSettings = async (locale:string) => {
+  return apiServiceCall({ url: `settings`, headers:{
+    "Accept-Language": locale
+  } });
 };
 // export const getHomeAchievementData = async () => {
 //     return apiServiceCall({ url: "achievement" })
@@ -32,8 +36,10 @@ export const getBlogs = async () => {
   return apiServiceCall({ url: "posts" });
 };
 
-export const getBlog = async (id: string) => {
-  return apiServiceCall({ url: `posts/${id}` });
+export const getBlog = async (id: string, locale: string) => {
+  return apiServiceCall({ url: `posts/${id}`,headers:{
+    "Accept-Language": locale
+  } });
 };
 // export const getContactUs = async () => {
   //     return apiServiceCall({ url: `setting/social` })

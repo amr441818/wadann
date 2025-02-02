@@ -12,7 +12,7 @@ interface LayoutProps {
 export default async function Page({ params }: LayoutProps) {
   const { locale } = await params;
 
-  const { data: blogs } = await getBlogs();
+  const { data: blogs } = await getBlogs(locale);
   console.log("data: blogs", blogs);
 
   return (
