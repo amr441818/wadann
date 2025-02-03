@@ -2,9 +2,9 @@
 
 import "./MainHeaderSlider.css";
 
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Autoplay } from "swiper/modules";
 import Container from "../../container";
 import { Files } from "lucide-react";
 import Image from "next/image";
@@ -38,8 +38,9 @@ export default function MainHeaderSlider(props: sliderProps) {
           //   }}
           speed={700}
           loop
-          modules={[Autoplay]}
-          className="MainHeaderSlider z-0 "
+          modules={[Pagination, Autoplay]}
+          pagination={{ clickable: true }}
+          className="MainHeaderSlider z-0 [&_.swiper-pagination]:lg:!left-[35%] [&_.swiper-pagination]:lg:!bottom-[30px]"
           style={{ zIndex: "0px" }}
         >
           {props?.files?.map((file, index) => {

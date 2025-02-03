@@ -2,7 +2,7 @@
 
 import "./partners.css";
 
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -22,16 +22,16 @@ export default function PartnersSlider({ data }: { data: ItemSlider[] }) {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          pagination={{
-            clickable: true,
-          }}
+          
+          
           dir="ltr"
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           }}
-          modules={[Navigation, Autoplay]}
-          className="partners relative"
+          modules={[Navigation, Autoplay,Pagination]}
+          pagination={{ clickable: true }}
+          className="partners relative z-0 [&_.swiper-pagination]:z-10  [&_.swiper-pagination]:lg:!-bottom-[50px] !overflow-visible !overflow-x-clip"
           breakpoints={{
             // When the viewport width is >= 320px
             320: {
@@ -55,7 +55,7 @@ export default function PartnersSlider({ data }: { data: ItemSlider[] }) {
             },
           }}
         >
-          {data?.map((item: ItemSlider, index) => (
+          {[...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,...data,]?.map((item: ItemSlider, index) => (
             <>
               <SwiperSlide key={index}>
                 <div className="flex  justify-center items-center w-full h-full flex-col gap-4">
