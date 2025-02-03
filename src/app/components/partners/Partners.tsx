@@ -1,39 +1,41 @@
-"use client"
-import React from "react"
+"use client";
 
-import Container from "../shared/container"
-import PartnersSlider from "./PartnersSlider/slider/PartnersSlider"
-
-
-interface Image {
-    id: number
-    file_name: string
-    original_url: string
-    extension: string
-    size: number
-}
+import Container from "../shared/container";
+import PartnersSlider from "./PartnersSlider/slider/PartnersSlider";
+import React from "react";
+import { useTranslations } from "next-intl";
 
 export interface ItemSlider {
-    id: number
-    title: string
-    image: Image
+  id: number;
+  title: string;
+  image: string;
 }
 
-const Partners = ({ locale, achievements }: { locale: string; achievements: ItemSlider[] }) => {
-    return (
-        <Container>
-            <div className="flex  flex-col gap-8">
-                <div className="flex  justify-center gap-4">
-                    {/* @ts-ignore */}
-                    <h6 className=" text-center text-[24px] font-bold text-primary">عملائنا وشركاؤنا</h6>
+const Partners = ({
+  locale,
+  partners,
+}: {
+  locale: string;
+  partners: ItemSlider[];
+}) => {
+  const t = useTranslations("Header");
+  return (
+    <div id="our-partners">
 
-                  
-                </div>
-                {/* @ts-ignore */}
-                <PartnersSlider data={achievements?.data} />
-            </div>
-        </Container>
-    )
-}
+    <Container>
+      <div className="flex  flex-col gap-8">
+        <div className="flex  justify-center gap-4">
+          {/* @ts-ignore */}
+          <h6 className="unique-h text-center text-[24px] font-bold text-primary">
+            {t("ourPartners")}
+          </h6>
+        </div>
+        {/* @ts-ignore */}
+        <PartnersSlider data={partners} />
+      </div>
+    </Container>
+    </div>
+  );
+};
 
-export default Partners
+export default Partners;

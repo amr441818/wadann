@@ -16,7 +16,7 @@ const InputComponent = (props: customInputProps) => {
                 placeholder={props.placeholder}
                 value={props.value}
                 name={props.name}
-                onChange={props.onChange}
+                {...props.register(props.name)}
                 required={props.required ? props.required : false}
                 disabled={props.disabled ? props.disabled : false}
                 

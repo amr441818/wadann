@@ -13,9 +13,7 @@ const Currencies = ({ iconColor }: { iconColor?: string }) => {
     const router = useRouter()
     const pathname = usePathname()
     const changeCurrency = (locale: string) => {
-        console.log("change currency and save it in local storage")
-        // const newPath = `/${locale}${pathname.replace(/^\/(en|fr)/, "")}` // Adjust based on locales
-        // router.push(newPath)
+       
     }
 
     return (

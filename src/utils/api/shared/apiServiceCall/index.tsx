@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const apiServiceCall = async ({
   url,
   method,
@@ -17,11 +18,12 @@ const apiServiceCall = async ({
       data: body, // Replace body with data
       headers: {
         "Content-Type": "application/json",
+        "Accept-language" : "en",
         ...headers,
       },
       // Spread any custom config passed to the function
     });
-    console.log(response?.data);
+  
     return response?.data;
   } catch (error) {
     // Handle error (you could add more custom error handling here)

@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 
 import AsideMenu from "./components/aside-menu";
-import { Button } from "@/components/ui/button";
+
 import Container from "../container";
-import Currencies from "./components/currencies";
+
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Language from "./components/language";
@@ -14,19 +14,18 @@ import { NavbarMenueItem } from "@/types/shared";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 
-const Header = ({ lang }: { lang: string }) => {
+const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const t = useTranslations("Header");
   const menuItems: NavbarMenueItem[] = [
     { value: t("home"), path: "/" },
     { value: t("whoWeAre"), path: "/who-we-are" },
-    { value: t("products"), path: "/products" },
-    { value: t("doorDesign"), path: "/door-design" },
-    { value: t("ourPartners"), path: "/our-partners" },
+    { value: t("products"), path: "/#products" },
+    { value: t("doorDesign"), path: "/design-door" },
+    { value: t("ourPartners"), path: "/#our-partners" },
     { value: t("blogs"), path: "/blogs" },
-    { value: t("contactUs"), path: "/contact-us" },
-    // { value: t("profile"), path: "/profile" },
-    // { value: t("myAccount"), path: "/my-account" },
+    { value: t("contactUs"), path: "/#contact-us" },
+   
   ];
 
   // in (single blog | developer)
@@ -36,8 +35,7 @@ const Header = ({ lang }: { lang: string }) => {
   // const place = "other-page"
   // // @ts-ignore
 
-  console.log("pathname", pathname);
-  console.log("place", place);
+
 
   let logoPath =
     place === "contact-us"
@@ -46,10 +44,10 @@ const Header = ({ lang }: { lang: string }) => {
       ? "/logoGold.svg"
       : "/logo.png";
 
-  console.log(logoPath);
+  
   const isSingleBlog =
     pathname.includes("blogs") && place !== undefined && place !== "blogs";
-  console.log("isSingleBlog", isSingleBlog);
+  
   if (isSingleBlog) {
     place = "single-blog";
 
@@ -58,7 +56,6 @@ const Header = ({ lang }: { lang: string }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log("aaaaaaaaaaaa", window.scrollY);
       if (window.scrollY > 2) {
         setIsScrolled(true);
       } else {
@@ -75,12 +72,12 @@ const Header = ({ lang }: { lang: string }) => {
 
   return (
     <div
-      className={`bg-transparent pb-4 bg-white text-black pt-1 max-h-[105px] fixed w-full z-[99] px-5 lg:px-0  `}
+      className={`bg-transparent pb-4 bg-white text-black pt-1 max-h-[105px] fixed w-full z-[99] px-5 lg:px-0 top-0`}
     >
       <Container>
         <nav className="flex items-center justify-between ">
           {/* logo */}
-          <div>
+          <Link href="/">
             <Image
               src={"/logo.png"}
               width={100}
@@ -89,7 +86,7 @@ const Header = ({ lang }: { lang: string }) => {
               className="h-[100px] w-[100px]"
               priority
             />
-          </div>
+          </Link>
 
           {/* links */}
           <div>
@@ -99,7 +96,14 @@ const Header = ({ lang }: { lang: string }) => {
                   <Link
                     href={item.path}
                     locale={lang}
-                    className="text-[16px] font-medium"
+                    className={`
+                    ${
+                      item.path === "/"
+                        ? "unique-h after:border-b-2 ltr:after:border-l-2 rtl:after:border-r-2 after:w-[20px] after:h-[18px]"
+                        : ""
+                    }
+                    text-[16px] font-medium text-xs
+                    `}
                   >
                     {item.value}
                   </Link>
@@ -108,29 +112,35 @@ const Header = ({ lang }: { lang: string }) => {
             </ul>
           </div>
 
-          {/* language */}
-          <div className="flex items-center justify-end gap-4 w-fit mr-auto">
-            <Language iconColor={"black"} />
-            {/* <Currencies iconColor={"black"} /> */}
-            {/* <Button className="bg-initialBg px-10 text-primary h-[44px] border border-primary">
+          <div className="flex items-center">
+            {" "}
+            {/* language */}
+            <div className="flex items-center justify-end gap-4 w-fit">
+              <Language iconColor={"black"} />
+              {/* <Currencies iconColor={"black"} /> */}
+              {/* <Button className="bg-initialBg px-10 text-primary h-[44px] border border-primary">
                             {t("register")}
                         </Button>
                         <Button className="bg-primaryBg px-10 text-initial h-[44px]">{t("login")}</Button> */}
-          </div>
-
-          {/* download */}
-          <button className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3 rounded-3xl">
-            <Icon icon="material-symbols:download-rounded" />
-            <span
-              className="whitespace-nowrap hidden sm:inline-block
-              "
+            </div>
+            <a
+              href={`${catalog}`}
+              download
+              rel="noopener noreferrer"
+              target="_blank"
+              className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3 rounded-3xl"
             >
-              تحمبل الكتالوج
-            </span>
-          </button>
-
-          {/* aside menu */}
-          <AsideMenu iconColor="black" lang={lang} />
+              <Icon icon="material-symbols:download-rounded" />
+              <span
+                className="whitespace-nowrap hidden sm:inline-block
+              "
+              >
+                {t("downloadCatalog")}
+              </span>
+            </a>
+            {/* aside menu */}
+            <AsideMenu iconColor="black" lang={lang} />
+          </div>
         </nav>
       </Container>
     </div>

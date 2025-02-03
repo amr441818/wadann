@@ -3,7 +3,7 @@
 import Link from "next/link"
 
 interface MainLinkProps {
-    locale: string
+    locale?: string
     href: string
     children: React.ReactNode
     className?: string

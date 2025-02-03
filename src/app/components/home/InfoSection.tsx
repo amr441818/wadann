@@ -1,3 +1,4 @@
+"use client";
 // @ts-nocheck
 
 import Container from "../shared/container";
@@ -5,6 +6,7 @@ import Image from "next/image";
 import MainLink from "../shared/main-link";
 import React from "react";
 import myImage from "@/public/card.png";
+import { useTranslations } from "next-intl";
 
 function InfoSection({
   title,
@@ -13,6 +15,7 @@ function InfoSection({
   btnText,
   btnLink,
   reverse,
+  noButton = false,
 }: {
   title: string;
   description: string;
@@ -20,43 +23,48 @@ function InfoSection({
   btnText: string;
   btnLink: string;
   reverse?: boolean;
+  noButton?: boolean;
 }) {
+  const t = useTranslations("WhoWeAre");
+  
   return (
     <section className="bg-background px-5 lg:px-0 mt-16">
       <Container>
         <div
-          className={`flex flex-col gap-7 ${
+          className={`flex flex-col gap-7 lg:gap-[95px] ${
             reverse ? "lg:flex-row-reverse" : "lg:flex-row"
           }  items-center`}
         >
-          <div className="w-full lg:w-1/2 mb-0 h-[350px]">
+          <div className="lg:w-[30%] lg:max-w-[300px] mb-0">
             <Image
-              width={100}
-              height={100}
+              width={1000}
+              height={1000}
               src={image}
               alt="Our Team"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-[300px] h-[300px] object-cover rounded-lg"
             />
           </div>
-          <div className="w-full lg:w-1/2 max-lg:mt-5">
+          <div className="w-full lg:w-[70%]  max-lg:mt-5">
             <h2
-              className={`text-[32px] ${
+              className={`unique-h text-[32px] ${
                 reverse ? "" : "mb-5 lg:mb-7"
               } text-primary font-bold`}
             >
-              {title}
+               {t("who-we-are")} 
             </h2>
             <p className="text-muted-foreground mb-4 font-light text-xl max-lg:mb-5">
               {description}
             </p>
-            <div className="w-full flex justify-end">
-              <MainLink
-                href={btnLink}
-                className="text-secondary-foreground bg-primary px-6 py-4 rounded-2xl text-white inline-block mr-auto"
-              >
-                {btnText}
-              </MainLink>
-            </div>
+            {noButton && (
+              <div className="w-full flex justify-end">
+                <MainLink
+                  href={btnLink}
+                  className="text-secondary-foreground bg-primary px-6 py-4 rounded-2xl text-white inline-block mr-auto"
+                >
+                  {btnText}
+                </MainLink>
+              </div>
+            )}
           </div>
         </div>
       </Container>
