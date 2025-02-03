@@ -4,15 +4,15 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import Container from "@/app/components/shared/container";
+
 import Image from "next/image";
 import Link from "next/link";
 import { getProduct } from "@/lib/serverActions";
-import { useTranslations } from "use-intl";
+import { useTranslations } from "next-intl";
 
 function ProductConect({ productData }: any) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const t = useTranslations()
+ const t = useTranslations()
   
   const doors = [
     {
