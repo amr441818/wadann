@@ -1,9 +1,13 @@
 import DesignDoor from '@/app/components/designDoor/DesignDoor'
 import React from 'react'
-
-const page = () => {
+interface LayoutProps {
+    params: Promise<{ locale: string | any }>; // Handle both promise and object
+  }
+  
+const  page = async ({params}:LayoutProps) => {
+    const { locale } = await params;
   return (
-    <div><DesignDoor/></div>
+    <div><DesignDoor locale={locale}/></div>
   )
 }
 

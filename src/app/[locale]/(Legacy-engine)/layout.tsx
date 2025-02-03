@@ -18,6 +18,7 @@ import { getMessages } from "next-intl/server";
 import { getSettings } from "@/lib/serverActions";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { ToastContainer } from 'react-toastify';
 
 // Define the correct type for LayoutProps
 interface LayoutProps {
@@ -47,7 +48,7 @@ export default async function Layout({ children, params }: LayoutProps) {
   // Return the layout with NextIntlClientProvider
   const { data } = await getSettings(locale);
 
-  console.log("data w3e neeeeeed", data);
+ 
 
   return (
     <html
@@ -61,6 +62,7 @@ export default async function Layout({ children, params }: LayoutProps) {
       >
         <NextIntlClientProvider locale={locale || "ar"} messages={messages}>
           <Providers locale={locale || "ar"}>
+            <ToastContainer position="bottom-left" />
             <Header catalog={data?.catalog} lang={locale} />
 
             <FixedSocial data={data} />
