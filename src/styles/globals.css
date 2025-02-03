@@ -144,12 +144,14 @@
 /* ................. */
 
 .productsSlider  .swiper-pagination-bullet,
+
 .partners  .swiper-pagination-bullet
  {
   background-color: #580c3188 !important;
 }
 
 .productsSlider  .swiper-pagination-bullet-active,
+
 .partners  .swiper-pagination-bullet-active {
   background-color: #580C31 !important;
 }
