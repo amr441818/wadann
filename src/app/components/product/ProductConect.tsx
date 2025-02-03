@@ -8,9 +8,11 @@ import Container from "@/app/components/shared/container";
 import Image from "next/image";
 import Link from "next/link";
 import { getProduct } from "@/lib/serverActions";
+import { useTranslations } from "use-intl";
 
 function ProductConect({ productData }: any) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const t = useTranslations()
   
   const doors = [
     {
@@ -95,7 +97,7 @@ function ProductConect({ productData }: any) {
           <h2 className="text-2xl text-primary font-semibold">
             عنوان / اسم الباب
           </h2>
-          <span className="text-gray-400 font-bold">{productData?.price}</span>
+          <span className="text-gray-400 font-bold">{productData?.price} {t("price")}</span>
         </div>
         <div className="font-bold mb-3">{productData?.title}</div>
         <div className="flex items-center gap-4 mb-4">
