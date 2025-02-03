@@ -31,7 +31,7 @@ export default function PartnersSlider({ data }: { data: ItemSlider[] }) {
           }}
           modules={[Navigation, Autoplay,Pagination]}
           pagination={{ clickable: true }}
-          className="partners relative z-0 [&_.swiper-pagination]:z-10 [&_.swiper-pagination]:!bottom-[-59px] [&_.swiper-pagination]:lg:!-bottom-[50px]  !overflow-visible !overflow-x-clip"
+          className="partners relative z-0 [&_.swiper-pagination]:z-10  [&_.swiper-pagination]:lg:!-bottom-[50px]  !overflow-visible !overflow-x-clip"
           breakpoints={{
             // When the viewport width is >= 320px
             320: {
