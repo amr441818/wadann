@@ -9,7 +9,7 @@ const Footer = async (params: any) => {
 
   return (
     <footer
-      className="relative bg-primary text-white px-5 lg:px-0 pt-10 lg:pt-[330px] lg:mt-[330px]"
+      className="relative bg-primary text-white px-5 lg:px-0 pt-10 lg:pt-[330px] lg:mt-[430px]"
       id="contact-us"
     >
       <ContactForm data={params?.data?.contactus} />

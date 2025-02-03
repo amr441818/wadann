@@ -7,6 +7,8 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import apiServiceCall from "@/utils/api/shared/apiServiceCall";
 import MainLink from "../shared/main-link";
 import Link from "next/link";
+import { toast } from "react-toastify";
+import { Icon } from "@iconify/react";
 
 const DesignDoor = ({ locale }: { locale: string }) => {
   const [colorId, setColorId] = React.useState(1);
@@ -48,17 +50,22 @@ const DesignDoor = ({ locale }: { locale: string }) => {
     mutate({ design_id: designId, color_id: colorId });
   }, [colorId, designId]);
 
-  if(isPending){
-return(<div className="  h-screen  w-full  bg-white  text-primary flex items-center justify-center" >loding ....</div>)
-  }         
+  if (isPending) {
+    toast.loading("Loading...", {
+        toastId: "loginLoadingToast",
+        autoClose: false,
+    });
+} else {
+    toast.dismiss("loginLoadingToast");
+}      
   
   return (
     <>
     
     <div className="my-[180px] ">
      <Container>
-        <div className="grid grid-cols-12  gap-[63px]">
-          <div className="flex justify-center items-center col-span-3">
+        <div className="grid grid-cols-12 gap-y-10 lg:gap-[63px]">
+          <div className="flex justify-center items-center col-span-12 lg:col-span-3">
             <Image
               src={`${designImg || "/assets/img/door.png"}`}
               alt="image"
@@ -68,7 +75,7 @@ return(<div className="  h-screen  w-full  bg-white  text-primary flex items-cen
             />
           </div>
 
-          <div className="flex col-span-9 flex-col gap-4">
+          <div className="flex col-span-12 lg:col-span-9 flex-col gap-4">
             <h6 className="text-primary text-[24px] font-bold">صمم بابك</h6>
 
             <div className="felx flex-col gap-[13px]">
@@ -88,9 +95,9 @@ return(<div className="  h-screen  w-full  bg-white  text-primary flex items-cen
                       <button
                         onClick={() => setColorId(color.id)}
                         key={color.id}
-                        className="flex"
+                        className="flex relative"
                       >
-                        {" "}
+                       {colorId === color.id && ( <div className="flex absolute top-0 left-0 w-full h-full justify-center items-center"><Icon icon="icon-park-twotone:correct" className="text-white size-5"/></div>)}
                         <Image
                           src={color.image}
                           alt={color.name}
@@ -114,9 +121,9 @@ return(<div className="  h-screen  w-full  bg-white  text-primary flex items-cen
                     <button
                       onClick={() => setDesignId(design.id)}
                       key={design.id}
-                      className="flex"
+                      className="flex relative"
                     >
-                      {" "}
+                      {designId === design.id && ( <div className="flex absolute top-0 left-0 w-full h-full justify-center items-center"><Icon icon="icon-park-twotone:correct" className="text-primary size-5"/></div>)}
                       <Image
                         src={design.image}
                         alt={design.name}
