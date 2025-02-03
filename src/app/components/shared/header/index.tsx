@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 
 import AsideMenu from "./components/aside-menu";
-import { Button } from "@/components/ui/button";
+
 import Container from "../container";
-import Currencies from "./components/currencies";
+
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Language from "./components/language";
@@ -25,8 +25,7 @@ const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
     { value: t("ourPartners"), path: "/#our-partners" },
     { value: t("blogs"), path: "/blogs" },
     { value: t("contactUs"), path: "/#contact-us" },
-    // { value: t("profile"), path: "/profile" },
-    // { value: t("myAccount"), path: "/my-account" },
+   
   ];
 
   // in (single blog | developer)
@@ -36,8 +35,7 @@ const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
   // const place = "other-page"
   // // @ts-ignore
 
-  console.log("pathname", pathname);
-  console.log("place", place);
+
 
   let logoPath =
     place === "contact-us"
@@ -46,10 +44,10 @@ const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
       ? "/logoGold.svg"
       : "/logo.png";
 
-  console.log(logoPath);
+  
   const isSingleBlog =
     pathname.includes("blogs") && place !== undefined && place !== "blogs";
-  console.log("isSingleBlog", isSingleBlog);
+  
   if (isSingleBlog) {
     place = "single-blog";
 

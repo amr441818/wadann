@@ -26,7 +26,7 @@ const DesignDoor = ({ locale }: { locale: string }) => {
         headers: { "Accept-Language": locale },
       }),
   });
-  // console.log( "designs",data?.data?.colors)
+  
 
   const { mutate, isError, isSuccess, isPending } = useMutation({
     mutationFn: (data) =>
@@ -39,7 +39,7 @@ const DesignDoor = ({ locale }: { locale: string }) => {
    
 
     onSuccess: (data, variables, context) => {
-      console.log("data door", data?.data?.product?.image);
+     
       setDesignImg(data?.data?.product?.image);
       setWatsApp(data?.data?.whatsapp_link);
     },

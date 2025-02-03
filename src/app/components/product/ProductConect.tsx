@@ -11,7 +11,7 @@ import { getProduct } from "@/lib/serverActions";
 
 function ProductConect({ productData }: any) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  console.log("get id hereeeeeee", productData);
+  
   const doors = [
     {
       id: 1,
@@ -36,7 +36,7 @@ function ProductConect({ productData }: any) {
   ];
 
   return (
-    <div className="flex items-center justify-center mt-32">
+    <div id="products" className="flex items-center justify-center mt-32">
       <div className="w-[30%] mx-auto p-4 space-y-2">
         <div className="flex flex-row-reverse items-center justify-center gap-5">
           {/* Main Slider */}

@@ -14,7 +14,7 @@ const Footer = async (params: any) => {
     >
       <ContactForm data={params?.data?.contactus} />
       <Container className="">
-        {/* logo and links */}
+       
         <div className="grid grid-cols-1 md:grid-cols-4 py-14 gap-3">
           <div className="flex justify-center md:justify-start max-md:items-center ">
             <Image

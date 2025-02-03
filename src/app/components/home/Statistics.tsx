@@ -1,6 +1,5 @@
 "use client";
 
-import "../Achievements/slider/AchievemetsSlider.css";
 
 import Container from "../shared/container";
 import { Icon } from "@iconify/react";

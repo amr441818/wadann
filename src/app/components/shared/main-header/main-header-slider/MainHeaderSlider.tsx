@@ -2,9 +2,9 @@
 
 import "./MainHeaderSlider.css";
 
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Autoplay } from "swiper/modules";
 import Container from "../../container";
 import { Files } from "lucide-react";
 import Image from "next/image";
@@ -22,7 +22,7 @@ type sliderProps = {
   files: Slider[];
 };
 export default function MainHeaderSlider(props: sliderProps) {
-  console.log("filse", props.files);
+  
 
   const t = useTranslations();
 
@@ -34,18 +34,19 @@ export default function MainHeaderSlider(props: sliderProps) {
           centeredSlides={true}
             autoplay={{
               delay: 3000,
+
               disableOnInteraction: false,
             }}
           speed={700}
           loop
-          modules={[Autoplay]}
-          className="MainHeaderSlider z-0 "
+          modules={[Pagination, Autoplay]}
+          pagination={{ clickable: true }}
+          className="MainHeaderSlider z-0 [&_.swiper-pagination]:lg:!left-[35%] [&_.swiper-pagination]:lg:!bottom-[30px]"
           style={{ zIndex: "0px" }}
         >
           {props?.files?.map((file, index) => {
             return (
-              <>
-                {" "}
+              
                 <SwiperSlide key={index}>
                   <div className="grid grid-cols-12 h-full w-full bg-primary">
                     <div className="flex col-span-12 lg:col-span-6 w-full items-end justify-center ">
@@ -71,7 +72,7 @@ export default function MainHeaderSlider(props: sliderProps) {
                     </div>
                   </div>
                 </SwiperSlide>
-              </>
+            
             );
           })}
         </Swiper>

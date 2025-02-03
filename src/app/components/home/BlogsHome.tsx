@@ -1,11 +1,10 @@
 "use client";
 
-import "../Achievements/slider/AchievemetsSlider.css";
+
 
 import BlogCard from "../blogs/BlogCard";
 import Container from "../shared/container";
-import { Icon } from "@iconify/react";
-import MainLink from "../shared/main-link";
+
 import { useTranslations } from "next-intl";
 
 export interface Post {
@@ -19,7 +18,7 @@ export interface Post {
 function BlogsHome({ locale, blogs }: { locale: string, blogs:Post[] }) {
   const t = useTranslations("Header");
   return (
-    <div className="">
+    <div className="" id="blogs">
       <Container>
       <div className="flex justify-center items-center">
       <h2 className="text-3xl font-bold text-primary mt-10 mb-5 text-center unique-h w-fit ">

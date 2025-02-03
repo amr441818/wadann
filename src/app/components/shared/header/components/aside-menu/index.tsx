@@ -20,11 +20,11 @@ function AsideMenu({ lang, iconColor }: { lang: string; iconColor?: string }) {
   const menuItems: NavbarMenueItem[] = [
     { value: t("home"), path: "/" },
     { value: t("whoWeAre"), path: "/who-we-are" },
-    { value: t("products"), path: "/products" },
-    { value: t("doorDesign"), path: "/door-design" },
-    { value: t("ourPartners"), path: "/our-partners" },
-    { value: t("blogs"), path: "/blogs" },
-    { value: t("contactUs"), path: "/contact-us" },
+    { value: t("products"), path: "#products" },
+    { value: t("doorDesign"), path: "/design-door" },
+    { value: t("ourPartners"), path: "#our-partners" },
+    { value: t("blogs"), path: "#blogs" },
+    { value: t("contactUs"), path: "#contact-us" },
     // { value: t("profile"), path: "/profile" },
     // { value: t("myAccount"), path: "/my-account" },
   ];

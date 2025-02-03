@@ -2,7 +2,7 @@
 
 import "./productSlider.css";
 
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -17,8 +17,6 @@ export default function ProductSlider({
   data: ProductItem[];
   locale: string;
 }) {
-
-  
   return (
     <>
       <div dir="ltr">
@@ -30,16 +28,15 @@ export default function ProductSlider({
             delay: 2500,
             disableOnInteraction: false,
           }}
-          pagination={{
-            clickable: true,
-          }}
+         
           dir="ltr"
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           }}
-          modules={[Navigation, Autoplay]}
-          className="productsSlider relative"
+          modules={[Navigation, Autoplay, Pagination]}
+          pagination={{ clickable: true }}
+          className="productsSlider relative z-0 [&_.swiper-pagination]:z-10  [&_.swiper-pagination]:lg:!-bottom-[50px] !overflow-visible !overflow-x-clip"
           breakpoints={{
             // When the viewport width is >= 320px
             320: {
@@ -64,10 +61,12 @@ export default function ProductSlider({
           }}
         >
           {data?.map((item: ProductItem, index) => (
-            <>
+          
               <SwiperSlide key={index}>
                 <div className="flex  justify-center items-center w-full h-full flex-col gap-4">
-                  <Link href={`/${locale}/products/${item?.id}` || "/products/1"}>
+                  <Link
+                    href={`/${locale}/products/${item?.id}` || "/products/1"}
+                  >
                     <Image
                       width={133}
                       height={290}
@@ -84,7 +83,7 @@ export default function ProductSlider({
                   </div>
                 </div>
               </SwiperSlide>
-            </>
+            
           ))}
           <button className="absolute top-1/2 -translate-y-1/2 !left-0 z-10 swiper-button-prev !w-10 !h-10 rounded-full !bg-[#BA9F4B] flex items-center justify-center hover:!bg-[#BA9F4B] transition-colors">
             <span className="sr-only">Previous</span>

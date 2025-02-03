@@ -23,7 +23,7 @@ const apiServiceCall = async ({
       },
       // Spread any custom config passed to the function
     });
-    console.log(response?.data);
+  
     return response?.data;
   } catch (error) {
     // Handle error (you could add more custom error handling here)
