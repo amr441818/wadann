@@ -10,6 +10,8 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
+import { toast } from "react-toastify";
+import Link from "next/link";
 
 interface ContactUs {
   mobile: string;
@@ -19,7 +21,8 @@ interface ContactUs {
 }
 
 const ContactForm = ({ data }: { data: ContactUs }) => {
-  const { register, handleSubmit } = useForm({
+  const t = useTranslations("Header");
+  const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       name: "",
       mobile: "",
@@ -35,26 +38,30 @@ const ContactForm = ({ data }: { data: ContactUs }) => {
         data
       ),
 
-    onError: (error, variables, context) => {
-      // An error happened!
-      /* @ts-ignore */
-      console.log(`rolling back optimistic update with id ${context?.id}`);
-      console.log("error done");
-    },
+   
     onSuccess: (data, variables, context) => {
-      console.log("success done");
+      toast.success(t('success'))
+      reset()
+
     },
-    onSettled: (data, error, variables, context) => {
-      console.log("settled done");
-      // Error or success... doesn't matter!
-    },
+   
   });
 
+    if (isPending) {
+            toast.loading("Loading...", {
+                toastId: "loginLoadingToast",
+                autoClose: false,
+            });
+        } else {
+            toast.dismiss("loginLoadingToast");
+        }
+
   const onSubmit = (data: any) => {
-    console.log(data);
     mutate(data);
   };
-  const t = useTranslations("Header");
+
+
+
   return (
     <div className="lg:absolute top-0 lg:-translate-y-1/2 left-1/2 lg:-translate-x-1/2 form-shadow flex flex-col gap-[56px] bg-white rounded-[24px] lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px] ">
       <div className="flex items-center justify-center">
@@ -110,9 +117,7 @@ const ContactForm = ({ data }: { data: ContactUs }) => {
                 {"something went round please try again"}
               </p>
             )}
-            {isSuccess && (
-              <p className="text-green-500 text-sm mt-1">{"sent success"}</p>
-            )}
+          
 
             <button
               type="submit"
@@ -124,39 +129,39 @@ const ContactForm = ({ data }: { data: ContactUs }) => {
         </div>
         <div className="flex  flex-col gap-4  col-span-12  lg:col-span-6">
           <div className="flex gap-[10px] items-center">
-            <div className="flex items-center justify-center  w-[57px] h-[49px] rounded-full bg-[#f9f6ef]">
+            <Link href={`tel:${data?.mobile}`} className="flex items-center justify-center  w-[57px] h-[49px] rounded-full bg-[#f9f6ef]">
               <Image
-                src="/assets/img/phone.png"
+                src="/assets/img/mobile.png"
                 width={57}
                 height={49}
                 alt="contact us form"
-                className="w-[57px] h-[49px] p-4 "
+                className="w-[57px] h-[49px] p-4 object-contain"
               />
-            </div>
+            </Link>
 
             <p className="text-[#636363] font-medium">{data?.mobile} </p>
           </div>
           <div className="flex gap-[10px] items-center">
-            <div className="flex items-center justify-center w-[57px] h-[49px] rounded-full bg-[#f9f6ef]">
+            <Link href={`mailTo:${data?.email}`} className="flex items-center justify-center w-[57px] h-[49px] rounded-full bg-[#f9f6ef]">
               <Image
                 src="/assets/img/message.png"
                 width={72}
                 height={72}
                 alt="contact us form"
-                className="w-[57px] h-[49px]  p-4 "
+                className="w-[57px] h-[49px]  p-4 object-contain "
               />
-            </div>
+            </Link>
 
             <p className="text-[#636363] font-medium">{data?.email} </p>
           </div>
           <div className="flex gap-3 items-center">
             <div className="flex items-center justify-center w-[57px] h-[49px] rounded-full  bg-[#f9f6ef]">
               <Image
-                src="/assets/img/location.png"
+                src="/assets/img/loc.png"
                 width={72}
                 height={72}
                 alt="contact us form"
-                className="w-[57px] h-[49px]  p-4 object-cover"
+                className="w-[57px] h-[49px]  p-4 object-contain"
               />
             </div>
 

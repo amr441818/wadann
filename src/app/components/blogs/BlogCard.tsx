@@ -19,13 +19,13 @@ const BlogCard = ({ blogData, locale }: { blogData: Post; locale: any }) => {
           alt={blogData.title || "no title"}
         />
       </div>
-      <div className="px-1 py-4 bg-white">
+      <div className="px-[14px] py-4 bg-white">
         <div className="pb-2">
           <div className="font-medium text-sm mb-1">
             {blogData.title || "no title"}
           </div>
-          <div className="py-2 text-primary flex gap-2 items-center">
-            <Icon icon="fa6-solid:arrow-right-long" className="rotate-180" />
+          <div className="py-2 text-primary flex gap-1 items-center">
+            <Icon icon="mdi-light:clock" className="rotate-180 size-5 font-bold" />
             <span>{blogData.created_at}</span>
           </div>
           <p className="text-gray-700 text-xs line-clamp-4">

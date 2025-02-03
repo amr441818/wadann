@@ -10,6 +10,8 @@ import Statistics from "@/app/components/home/Statistics";
 import {
   getHomeData,
 } from "@/lib/serverActions";
+import OfferSlider from "@/app/components/offers/OfferSlider/OfferSlider";
+import Container from "@/app/components/shared/container";
 
 interface LayoutProps {
   params: Promise<{ locale: string | any }>; // Handle both promise and object
@@ -51,6 +53,10 @@ export default async function HomePage({ params }: LayoutProps) {
         products={homeData?.data?.products}
         locale={(await params).locale}
       />
+      <Container>
+
+      <OfferSlider files={homeData?.data?.banners} />
+      </Container>
       <Partners
         partners={homeData?.data?.partners}
         locale={(await params).locale}

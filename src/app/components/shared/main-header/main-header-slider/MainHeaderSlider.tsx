@@ -32,10 +32,10 @@ export default function MainHeaderSlider(props: sliderProps) {
         <Swiper
           spaceBetween={0}
           centeredSlides={true}
-          //   autoplay={{
-          //     delay: 3000,
-          //     disableOnInteraction: false,
-          //   }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
           speed={700}
           loop
           modules={[Autoplay]}
