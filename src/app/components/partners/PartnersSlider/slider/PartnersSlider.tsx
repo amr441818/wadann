@@ -8,9 +8,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image from "next/image";
 import { ItemSlider } from "../../Partners";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 export default function PartnersSlider({ data }: { data: ItemSlider[] }) {
 
+  
   return (
     <>
       <div dir="ltr">
@@ -31,7 +34,7 @@ export default function PartnersSlider({ data }: { data: ItemSlider[] }) {
           }}
           modules={[Navigation, Autoplay,Pagination]}
           pagination={{ clickable: true }}
-          className="partners relative z-0 [&_.swiper-pagination]:z-10  [&_.swiper-pagination]:lg:!-bottom-[50px]  !overflow-visible !overflow-x-clip"
+          className="partners relative z-0 [&_.swiper-pagination]:z-10  [&_.swiper-pagination]:!-bottom-[60px]   [&_.swiper-pagination]:lg:!-bottom-[50px]  !overflow-visible !overflow-x-clip"
           breakpoints={{
             // When the viewport width is >= 320px
             320: {

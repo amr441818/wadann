@@ -12,6 +12,7 @@ import {
 } from "@/lib/serverActions";
 import OfferSlider from "@/app/components/offers/OfferSlider/OfferSlider";
 import Container from "@/app/components/shared/container";
+import axios from "axios";
 
 interface LayoutProps {
   params: Promise<{ locale: string | any }>; // Handle both promise and object
@@ -21,6 +22,9 @@ export default async function HomePage({ params }: LayoutProps) {
   const { locale } = await params;
 
   const homeData = await getHomeData(locale);
+
+ 
+  
 
 
   return (

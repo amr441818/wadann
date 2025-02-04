@@ -32,6 +32,7 @@ export const getBlog = async (id: string, locale: string) => {
   export const getProduct = async (id: string) => {
     return apiServiceCall({ url: `products/${id}` });
   };
+  
 
 
 
