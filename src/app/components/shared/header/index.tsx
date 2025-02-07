@@ -18,24 +18,37 @@ const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const t = useTranslations("Header");
   const menuItems: NavbarMenueItem[] = [
-    { value: t("home"), path: "/" },
+    { value: t("home"), path: `/` },
     { value: t("whoWeAre"), path: "/who-we-are" },
     { value: t("products"), path: "/#products" },
     { value: t("doorDesign"), path: "/design-door" },
     { value: t("ourPartners"), path: "/#our-partners" },
-    { value: t("blogs"), path: "/blogs" },
+    { value: t("blogs"), path: "/#blogs" },
     { value: t("contactUs"), path: "/#contact-us" },
    
   ];
 
+
+
   // in (single blog | developer)
 
   const pathname = usePathname();
+  console.log(pathname)
   let place = pathname.split("/").pop();
+  console.log(place)
   // const place = "other-page"
   // // @ts-ignore
 
+if( place != lang){
 
+  delete menuItems[2]
+  delete menuItems[4]
+  delete menuItems[5]
+  delete menuItems[6]
+}else{
+  
+  console.log(' this')
+}
 
   let logoPath =
     place === "contact-us"
@@ -98,11 +111,11 @@ const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
                     locale={lang}
                     className={`
                     ${
-                      item.path === "/"
-                        ? "unique-h after:border-b-2 ltr:after:border-l-2 rtl:after:border-r-2 after:w-[20px] after:h-[18px]"
+                       item.path === `/${place}`  || `${item.path}${lang}` === `/${place}` 
+                        ? "unique-h after:border-b-2 text-[16px] text-primary font-bold ltr:after:border-l-2 rtl:after:border-r-2 after:w-[20px] after:h-[18px]"
                         : ""
                     }
-                    text-[16px] font-medium text-xs
+                    text-[16px] font-medium 
                     `}
                   >
                     {item.value}
