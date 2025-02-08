@@ -31,7 +31,7 @@ export default function MainHeaderSlider(props: sliderProps) {
       <div className="">
         <Swiper
           spaceBetween={0}
-          centeredSlides={true}
+          // centeredSlides={true}
             autoplay={{
               delay: 3000,
 

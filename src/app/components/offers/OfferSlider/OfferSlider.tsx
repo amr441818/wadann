@@ -31,7 +31,7 @@ export default function OfferSlider(props: sliderProps) {
       <div className="">
         <Swiper
           spaceBetween={30}
-          centeredSlides={true}
+          // centeredSlides={true}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
