@@ -36,7 +36,7 @@ export default function ProductSlider({
           }}
           modules={[Navigation, Autoplay, Pagination]}
           pagination={{ clickable: true }}
-          className="productsSlider relative z-0 [&_.swiper-pagination]:z-10  [&_.swiper-pagination]:lg:!-bottom-[50px] !overflow-visible !overflow-x-clip"
+          className="productsSlider relative z-0 [&_.swiper-pagination]:z-10 [&_.swiper-pagination]:!-bottom-[60px]  [&_.swiper-pagination]:lg:!-bottom-[50px] !overflow-visible !overflow-x-clip"
           breakpoints={{
             // When the viewport width is >= 320px
             320: {
