@@ -56,7 +56,7 @@ export default function MainHeaderSlider(props: sliderProps) {
                         src={file?.image}
                         priority
                         alt={file?.name}
-                        className="!w-[250px] h-[150px] lg:!w-[569px] lg:h-[419px] object-cover"
+                        className="!w-[250px] h-[250px] lg:!w-[569px] lg:h-[419px] object-cover"
                       />
                     </div>
                     <div className="flex col-span-12 lg:col-span-6 items-center justify-center lg:justify-end">
