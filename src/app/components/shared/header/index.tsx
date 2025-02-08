@@ -24,19 +24,18 @@ const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
     { value: t("doorDesign"), path: "/design-door" },
     { value: t("ourPartners"), path: "/#our-partners" },
     { value: t("blogs"), path: "/#blogs" },
-    { value: t("contactUs"), path: "/#contact-us" },
+    { value: t("contactUs"), path: "/contact-us" },
    
   ];
 
 
 
-  // in (single blog | developer)
 
   const pathname = usePathname();
   console.log(pathname)
   let place = pathname.split("/").pop();
-  console.log(place)
-  // const place = "other-page"
+ 
+
   // // @ts-ignore
 
 if( place != lang){

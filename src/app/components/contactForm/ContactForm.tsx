@@ -12,6 +12,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import { toast } from "react-toastify";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface ContactUs {
   mobile: string;
@@ -20,7 +21,7 @@ interface ContactUs {
   map_iframe: string;
 }
 
-const ContactForm = ({ data }: { data: ContactUs }) => {
+const ContactForm = ({ data, locale  }: { data: ContactUs, locale?:string }) => {
   const t = useTranslations("Header");
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
@@ -60,10 +61,14 @@ const ContactForm = ({ data }: { data: ContactUs }) => {
     mutate(data);
   };
 
+  const pathname = usePathname();
+  console.log(pathname)
+  let place = pathname.split("/").pop();
+ 
 
 
   return (
-    <div className="lg:absolute top-0 lg:-translate-y-1/2 left-1/2 lg:-translate-x-1/2 form-shadow flex flex-col gap-[56px] bg-white rounded-[24px] lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px] ">
+    <div className={`${`/${locale}` === `/${place}`? "lg:absolute top-0 lg:-translate-y-1/2 left-1/2 lg:-translate-x-1/2":"my-[100px]"} form-shadow flex flex-col gap-[56px] bg-white rounded-[24px] lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px]`}>
       <div className="flex items-center justify-center">
         
         <h5 className="unique-h w-fit text-[24px] font-bold text-primary text-center">

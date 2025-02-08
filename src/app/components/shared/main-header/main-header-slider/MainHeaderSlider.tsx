@@ -54,6 +54,7 @@ export default function MainHeaderSlider(props: sliderProps) {
                         width={569}
                         height={419}
                         src={file?.image}
+                        priority
                         alt={file?.name}
                         className="!w-[250px] h-[150px] lg:!w-[569px] lg:h-[419px] object-cover"
                       />
