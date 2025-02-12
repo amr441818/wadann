@@ -46,7 +46,7 @@ function ProductConect({ productData }: any) {
                         spaceBetween={10}
                         navigation
                         thumbs={{ swiper: thumbsSwiper }}
-                        className="rounded-lg shadow-xl mb-2 [&_.swiper-button-prev]:!hidden [&_.swiper-button-next]:!hidden h-[300px] lg:h-[500px]"
+                        className="rounded-lg mb-2 [&_.swiper-button-prev]:!hidden [&_.swiper-button-next]:!hidden h-[300px] lg:h-[500px]"
                     >
                         {productData?.images?.map((door: any) => (
                             <SwiperSlide key={door.id}>

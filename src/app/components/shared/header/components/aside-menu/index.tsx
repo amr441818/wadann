@@ -56,7 +56,7 @@ function AsideMenu({ lang, iconColor }: { lang: string; iconColor?: string }) {
 
       {/* aside*/}
       <div
-        className={`[&_*]:!text-white fixed top-0 left-0 w-[calc(100%-150px)] max-w-[350px] h-full bg-[#00000026]/50 backdrop-blur-sm z-50 flex justify-center items-center duration-500 ${
+        className={`[&_*]:!text-black fixed top-0 left-0 w-[calc(100%-150px)] max-w-[350px] h-full bg-white backdrop-blur-sm z-50 flex justify-center items-center duration-500 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >

@@ -61,7 +61,7 @@ function RightSideFooter({ data, language }) {
           <div className="flex flex-col">
             {col.links.map((item) => (
               <MainLink
-                className="my-1 lg:my-3 block text-white/70"
+                className="my-1 lg:my-3 block text-white/70 hover:text-white duration-200"
                 key={item.value}
                 locale={language}
                 href={item.path}
@@ -85,7 +85,7 @@ function RightSideFooter({ data, language }) {
           ].map(({ icon, key }) => (
             <Link
               key={key}
-              className="border border-white rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center"
+              className="border border-white rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center hover:bg-white hover:text-black duration-200"
               href={socialLinks?.[key] || "/"}
             >
               <Icon icon={icon} />

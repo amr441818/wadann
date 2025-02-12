@@ -126,7 +126,7 @@ const ContactForm = ({ data, locale  }: { data: ContactUs, locale?:string }) => 
 
             <button
               type="submit"
-              className="py-4 text-white text-[12px] bg-primary rounded-full"
+              className="py-4 text-white text-[12px] bg-primary rounded-full hover:bg-white hover:text-primary border hover:border-primary duration-300"
             >
               إرسال
             </button>
