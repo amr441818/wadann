@@ -47,7 +47,7 @@ function OurServices({
               <p className="text-paragText mb-5 text-sm">{item?.content} </p>
 
               <MainLink
-                className="px-5 py-2 bg-primary"
+                className="px-5 py-2 bg-primary hover:bg-white hover:text-primary border hover:border-primary"
                 locale={locale}
                 href="/"
               >
