@@ -46,13 +46,14 @@ function OurServices({
               </h3>
               <p className="text-paragText mb-5 text-sm">{item?.content} </p>
 
-              <MainLink
+              <a
+              target="_blank"
                 className="px-5 py-2 bg-primary"
-                locale={locale}
-                href="/"
+                // locale={locale}
+                href={`https://wa.me/966533318637?name=${item?.name}`}
               >
                 {t("order-now")}
-              </MainLink>
+              </a>
             </div>
           ))}
         </div>
