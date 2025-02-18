@@ -15,7 +15,7 @@ import Container from "@/app/components/shared/container";
 import axios from "axios";
 
 interface LayoutProps {
-  params: Promise<{ locale: string | any }>; // Handle both promise and object
+  params: Promise<{ locale: string | any }>; 
 }
 
 export default async function HomePage({ params }: LayoutProps) {
@@ -66,6 +66,7 @@ export default async function HomePage({ params }: LayoutProps) {
         counters={homeData?.data?.counters}
         locale={(await params).locale}
       />
+      {/* blogs */}
       <BlogsHome blogs={homeData?.data?.posts} locale={(await params).locale} />
 
      
