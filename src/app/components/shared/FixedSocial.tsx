@@ -45,20 +45,20 @@ function FixedSocial(params: any) {
       <Link
         className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
         /* @ts-ignore */
-        href={myObject?.twitter || "home"}
+        href={myObject?.instagram || "home"}
       >
         <Icon
-          icon="pajamas:twitter"
+          icon="hugeicons:instagram"
           className="text-primary group-hover:text-white duration-300"
         />
       </Link>
       <Link
         className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
         /* @ts-ignore */
-        href={myObject?.tiktok || "home"}
+        href={myObject?.facebook || "home"}
       >
         <Icon
-          icon="ph:tiktok-logo"
+          icon="ic:baseline-facebook"
           className="text-primary group-hover:text-white duration-300"
         />
       </Link>

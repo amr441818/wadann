@@ -24,7 +24,7 @@ function OurServices({
 }) {
   const t = useTranslations("Header");
   return (
-    <div className="">
+    <div id="services" className="">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {services?.map((item: Service, index) => (
@@ -48,9 +48,10 @@ function OurServices({
 
               <a
               target="_blank"
-                className="px-5 py-2 bg-primary"
+                className="px-5 py-2 text-primary border-[1px] border-primary rounded-full hover:bg-primary hover:text-white"
                 // locale={locale}
-                href={`https://wa.me/966533318637?name=${item?.name}`}
+                //@ts-ignore
+                href={item?.whatsapp_link}
               >
                 {t("order-now")}
               </a>

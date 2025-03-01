@@ -26,22 +26,26 @@ function RightSideFooter({ data, language }) {
   const copyright = t("copyright");
 
   const cols = [
+    // { value: t("home"), path: `/` },
+   
+
+
     {
       title: importantLinks,
       links: [
         { value: home, path: "/" },
         { value: whoWeAre, path: "who-we-are" },
-        { value: products, path: "/" },
-        { value: doorDesign, path: "/" },
+        { value: products,  path: "/#products"  },
+        { value: doorDesign, path: "design-door" },
       ],
     },
     {
       title: "",
       links: [
-        { value: services, path: "/" },
-        { value: ourPartners, path: "/" },
-        { value: blogs, path: "blogs" },
-        { value: contactUs, path: "/" },
+        { value: services, path: "/#services" },
+        { value: ourPartners, path: "/#our-partners" },
+        { value: blogs, path: "/#blogs" },
+        { value: contactUs, path: "/contact-us" },
       ],
     },
   ];
@@ -50,7 +54,7 @@ function RightSideFooter({ data, language }) {
     acc[social?.key] = social?.value;
     return acc;
   }, {});
-
+ console.log(socialLinks, "dfdfdfd")
   return (
     <>
       {cols.map((col) => (
@@ -59,7 +63,7 @@ function RightSideFooter({ data, language }) {
             {col.title}
           </h3>
           <div className="flex flex-col">
-            {col.links.map((item) => (
+            {col.links?.map((item) => (
               <MainLink
                 className="my-1 lg:my-3 block text-white/70 hover:text-white duration-200"
                 key={item.value}
@@ -80,8 +84,8 @@ function RightSideFooter({ data, language }) {
             { icon: "basil:whatsapp-outline", key: "whatsapp" },
             { icon: "ic:outline-snapchat", key: "snapchat" },
             { icon: "hugeicons:instagram", key: "instagram" },
-            { icon: "pajamas:twitter", key: "twitter" },
-            { icon: "ph:tiktok-logo", key: "tiktok" },
+            { icon: "ic:baseline-facebook", key: "facebook" },
+            // { icon: "ph:tiktok-logo", key: "tiktok" },
           ].map(({ icon, key }) => (
             <Link
               key={key}
