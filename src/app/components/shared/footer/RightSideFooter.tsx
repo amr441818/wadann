@@ -64,14 +64,18 @@ function RightSideFooter({ data, language }) {
           </h3>
           <div className="flex flex-col">
             {col.links?.map((item) => (
+              <div  key={item.value} className=" flex flex-col  group w-fit">
               <MainLink
-                className="my-1 lg:my-3 block text-white/70 hover:text-white duration-200"
-                key={item.value}
+                className=" lg:my-3 block text-white/70  w-fit hover:text-white  duration-200"
+               
                 locale={language}
                 href={item.path}
               >
                 {item.value}
-              </MainLink>
+              </MainLink> 
+              <div className=" bg-primary mt-[-5px]  border w-0 opacity-0 group-hover:w-full group-hover:opacity-100 duration-500"></div>
+              
+              </div>
             ))}
           </div>
         </div>
@@ -89,7 +93,7 @@ function RightSideFooter({ data, language }) {
           ].map(({ icon, key }) => (
             <Link
               key={key}
-              className="border border-white rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center hover:bg-white hover:text-black duration-200"
+              className="border border-white   p-2 w-[33px] h-[33px] flex items-center justify-center hover:bg-white hover:text-black duration-200"
               href={socialLinks?.[key] || "/"}
             >
               <Icon icon={icon} />
@@ -186,34 +190,34 @@ function RightSideFooter({ data, language }) {
         <h3 className={`font-semibold mb-10`}>{followUs}</h3>
         <div className="flex flex-wrap gap-4">
           <Link
-            className="border border-white rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center"
+            className="border border-white   p-2 w-[33px] h-[33px] flex items-center justify-center"
             href={myObject?.whatsapp || "home"}
           >
             <Icon icon="basil:whatsapp-outline" />
           </Link>
           <Link
-            className="border border-white rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center"
+            className="border border-white   p-2 w-[33px] h-[33px] flex items-center justify-center"
             locale={language}
             href={myObject?.snapchat || "home"}
           >
             <Icon icon="ic:outline-snapchat" />
           </Link>
           <Link
-            className="border border-white rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center"
+            className="border border-white   p-2 w-[33px] h-[33px] flex items-center justify-center"
             locale={language}
             href={myObject?.instagram || "home"}
           >
             <Icon icon="hugeicons:instagram" />
           </Link>
           <Link
-            className="border border-white rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center"
+            className="border border-white   p-2 w-[33px] h-[33px] flex items-center justify-center"
             locale={language}
             href={myObject?.twitter || "home"}
           >
             <Icon icon="pajamas:twitter" />
           </Link>
           <Link
-            className="border border-white rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center"
+            className="border border-white   p-2 w-[33px] h-[33px] flex items-center justify-center"
             locale={language}
             href={myObject?.tiktok || "home"}
           >

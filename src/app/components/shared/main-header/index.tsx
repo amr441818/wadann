@@ -37,9 +37,9 @@ export const    HeaderWrwpper = (props: HeaderWrwpperProps) => {
 
                 {/* {props?.isVidoeOrslider && props?.data?.data?.video !== null && (
                     <>
-                        <div className=" !h-[668px] rounded-[24px] w-full">
+                        <div className=" !h-[668px]    w-full">
                             <video
-                                className="!w-full h-[668px] object-cover rounded-[24px]"
+                                className="!w-full h-[668px] object-cover   "
                                 src={props?.data?.data?.video?.original_url}
                                 autoPlay
                                 loop
@@ -49,8 +49,8 @@ export const    HeaderWrwpper = (props: HeaderWrwpperProps) => {
                     </>
                 )}
 
-                <div className="overlay rounded-[24px] "></div> */}
-                {/* <div className="absolute rounded-[24px] w-full  h-full top-0 left-0  z-50 text-white">
+                <div className="overlay    "></div> */}
+                {/* <div className="absolute    w-full  h-full top-0 left-0  z-50 text-white">
                     {" "}
                     {props.children}
                 </div> */}

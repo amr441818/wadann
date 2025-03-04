@@ -140,7 +140,7 @@ if( place != lang){
               download
               rel="noopener noreferrer"
               target="_blank"
-              className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3 rounded-3xl"
+              className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3   "
             >
               <Icon icon="material-symbols:download-rounded" />
               <span

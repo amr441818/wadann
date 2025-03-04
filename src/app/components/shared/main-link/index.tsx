@@ -12,7 +12,7 @@ interface MainLinkProps {
 const MainLink = (params: MainLinkProps) => {
     const { locale, href, children, className } = params
     return (
-        <Link href={`/${locale}/${href}`} className={`text-white inline-block rounded-3xl duration-300 ${className}`}>
+        <Link href={`/${locale}/${href}`} className={`text-white inline-block    duration-300 ${className}`}>
             {children}
         </Link>
     )

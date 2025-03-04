@@ -9,7 +9,7 @@ import logo from "@/public/logo.png";
 
 const BlogCard = ({ blogData, locale }: { blogData: Post; locale: any }) => {
   return (
-    <div className="rounded-3xl overflow-hidden blog-shadow">
+    <div className="   overflow-hidden blog-shadow">
       <div className="max-h-[150px] lg:max-h-[200px] w-full overflow-hidden">
         <Image
           className="w-full h-[150px] lg:h-[200px] object-cover"

@@ -29,8 +29,10 @@ export const getBlog = async (id: string, locale: string) => {
 };
 
   
-  export const getProduct = async (id: string) => {
-    return apiServiceCall({ url: `products/${id}` });
+  export const getProduct = async (id: string, locale:string) => {
+    return apiServiceCall({ url: `products/${id}`,headers:{
+      "Accept-Language": locale
+    } });
   };
   
 
@@ -40,8 +42,10 @@ export const getBlog = async (id: string, locale: string) => {
 
 
 
-export const getAboutUs = async () => {
-  return apiServiceCall({ url: "aboutushome" });
+export const getAboutUs = async (locale:string) => {
+  return apiServiceCall({ url: "aboutushome", headers:{
+    "Accept-Language": locale
+  } });
 };
 
 

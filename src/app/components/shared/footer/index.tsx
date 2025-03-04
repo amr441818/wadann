@@ -32,7 +32,7 @@ const Footer =  (params: any) => {
         <div className="grid grid-cols-1 md:grid-cols-4 py-14 gap-3">
           <div className="flex justify-center md:justify-start max-md:items-center ">
             <Image
-              className="w-[145px] h-[145px] rounded-3xl overflow-hidden"
+              className="w-[145px] h-[145px]    overflow-hidden"
               src={params?.data?.footer_logo || logoServer}
               width={200}
               height={54}

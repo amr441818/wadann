@@ -46,7 +46,7 @@ function ProductConect({ productData }: any) {
                         spaceBetween={10}
                         navigation
                         thumbs={{ swiper: thumbsSwiper }}
-                        className="rounded-lg mb-2 [&_.swiper-button-prev]:!hidden [&_.swiper-button-next]:!hidden h-[300px] lg:h-[500px]"
+                        className="   mb-2 [&_.swiper-button-prev]:!hidden [&_.swiper-button-next]:!hidden h-[300px] lg:h-[500px]"
                     >
                         {productData?.images?.map((door: any) => (
                             <SwiperSlide key={door.id}>
@@ -83,7 +83,7 @@ function ProductConect({ productData }: any) {
                                         width={400}
                                         height={400}
                                         alt={`door`}
-                                        className="w-[200px] h-[70px] lg:h-[120px] object-contain rounded-md opacity-60 hover:opacity-100 transition-opacity"
+                                        className="w-[200px] h-[70px] lg:h-[120px] object-contain    opacity-60 hover:opacity-100 transition-opacity"
                                     />
                                 </div>
                             </SwiperSlide>
@@ -93,26 +93,26 @@ function ProductConect({ productData }: any) {
             </div>{" "}
             <div className="w-full lg:w-[70%]">
                 <div className="flex items-center gap-5 mr-4 mb-3">
-                    <h2 className="text-2xl text-primary font-semibold">عنوان / اسم الباب</h2>
+                    <h2 className="text-2xl text-primary font-semibold">{productData?.title}</h2>
                     <span className="text-gray-400 font-bold">
                         {productData?.price} {t("price")}
                     </span>
                 </div>
-                <div className="font-bold mb-3">{productData?.title}</div>
+                {/* <div className="font-bold mb-3">{productData?.title}</div> */}
                 <div className="flex items-center gap-4 mb-4">
                     <Image
                         src={productData?.color?.image}
                         width={400}
                         height={400}
                         alt={`door`}
-                        className="w-[120px] h-[65px] object-contain rounded-md transition-opacity"
+                        className="w-[120px] h-[65px] object-contain    transition-opacity"
                     />
                     <Image
                         src={productData?.design?.image}
                         width={400}
                         height={400}
                         alt={`door`}
-                        className="w-[40px] h-[65px] object-contain rounded-md transition-opacity"
+                        className="w-[40px] h-[65px] object-contain    transition-opacity"
                     />
                 </div>
 
@@ -129,7 +129,7 @@ function ProductConect({ productData }: any) {
                 </div>
 
                 <Link
-                    className="bg-primary text-white px-10 py-3 rounded-3xl mt-5 inline-block"
+                    className="bg-primary text-white px-10 py-3    mt-5 inline-block"
                     target="_blank"
                     href={productData?.whatsapp_link}
                 >

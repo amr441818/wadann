@@ -22,8 +22,8 @@ function page() {
         <div className="mt-10">
           <div className="flex ">
             <div className="border-2 border-primary border-dashed border-r-0 border-b-0 w-full pb-14">
-              <div className="flex items-center gap-3 bg-bodyColor w-fit px-5 py-2 rounded-lg -translate-y-1/2">
-                <div className="w-[50px] h-[50px] rounded-full flex items-center justify-center bg-[#580C31]/20">
+              <div className="flex items-center gap-3 bg-bodyColor w-fit px-5 py-2    -translate-y-1/2">
+                <div className="w-[50px] h-[50px]   flex items-center justify-center bg-[#580C31]/20">
                   <Image
                     src="/assets/img/message-primary.png"
                     width={72}
@@ -50,8 +50,8 @@ function page() {
           <div className="flex ">
             <div className="hidden md:block w-[45%] border-2 border-primary border-dashed border-l-0 border-b-0 !mr-5"></div>
             <div className="w-full md:w-[55%] pb-14">
-              <div className="flex items-center gap-3 bg-bodyColor w-fit px-5 py-2 rounded-lg -translate-y-1/2">
-                <div className="w-[50px] h-[50px] rounded-full flex items-center justify-center bg-[#580C31]/20">
+              <div className="flex items-center gap-3 bg-bodyColor w-fit px-5 py-2    -translate-y-1/2">
+                <div className="w-[50px] h-[50px]   flex items-center justify-center bg-[#580C31]/20">
                   <Image
                     src="/assets/img/goal-primary.png"
                     width={72}
@@ -76,8 +76,8 @@ function page() {
 
           <div className="flex ">
             <div className="w-full">
-              <div className="flex items-center gap-3 bg-bodyColor w-fit  py-2 rounded-lg -translate-y-1/2">
-                <div className="w-[50px] h-[50px] rounded-full flex items-center justify-center bg-[#580C31]/20">
+              <div className="flex items-center gap-3 bg-bodyColor w-fit  py-2    -translate-y-1/2">
+                <div className="w-[50px] h-[50px]   flex items-center justify-center bg-[#580C31]/20">
                   <Image
                     src="/assets/img/view-primary.png"
                     width={57}

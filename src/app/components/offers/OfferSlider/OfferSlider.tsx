@@ -48,13 +48,13 @@ export default function OfferSlider(props: sliderProps) {
               
                
                 <SwiperSlide key={index}>
-                  <Link href={`${file.link}`} className=" w-full rounded-[24px]">
+                  <Link href={`${file.link}`} className=" w-full   ">
                     <Image
                       src={file.image}
                       alt={file.image}
                       width={500}
                       height={500}
-                      className="w-full h-[329px] rounded-[24px] object-cover "
+                      className="w-full h-[329px]    object-cover "
                     />
                   </Link>
                 </SwiperSlide>

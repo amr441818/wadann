@@ -73,7 +73,7 @@ export default function PartnersSlider({ data }: { data: ItemSlider[] }) {
               </SwiperSlide>
             
           ))}
-          <button className="absolute top-1/2 -translate-y-1/2 !left-0 z-10 swiper-button-prev !w-10 !h-10 rounded-full !bg-[#BA9F4B] flex items-center justify-center hover:!bg-[#BA9F4B] transition-colors">
+          <button className="absolute top-1/2 -translate-y-1/2 !left-0 z-10 swiper-button-prev !w-10 !h-10   !bg-[#BA9F4B] flex items-center justify-center hover:!bg-[#BA9F4B] transition-colors">
             <span className="sr-only">Previous</span>
             <svg
               className="!w-6 !h-6 text-white"
@@ -89,7 +89,7 @@ export default function PartnersSlider({ data }: { data: ItemSlider[] }) {
               />
             </svg>
           </button>{" "}
-          <button className="absolute top-1/2 -translate-y-1/2 !right-0 z-10 swiper-button-next !w-10 !h-10 rounded-full !bg-[#BA9F4B] flex items-center justify-center hover:!bg-[#BA9F4B] transition-colors">
+          <button className="absolute top-1/2 -translate-y-1/2 !right-0 z-10 swiper-button-next !w-10 !h-10   !bg-[#BA9F4B] flex items-center justify-center hover:!bg-[#BA9F4B] transition-colors">
             <span className="sr-only">Next</span>
             <svg
               className="!w-6 !h-6 text-white"

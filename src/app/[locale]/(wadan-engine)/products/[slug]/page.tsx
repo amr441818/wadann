@@ -8,7 +8,7 @@ interface LayoutProps {
 export default async function Page({ params }: LayoutProps) {
   const { locale, slug } = await params;
 
-  const { data: productData } = await getProduct(slug);
+  const { data: productData } = await getProduct(slug, locale);
 
   
   

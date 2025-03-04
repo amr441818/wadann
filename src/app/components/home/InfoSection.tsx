@@ -41,7 +41,7 @@ function InfoSection({
               height={1000}
               src={image}
               alt="Our Team"
-              className="w-[300px] h-[300px] object-cover rounded-lg"
+              className="w-[300px] h-[300px] object-cover   "
             />
           </div>
           <div className="w-full lg:w-[70%] flex flex-col items-center lg:items-start  max-lg:mt-5">
@@ -59,7 +59,7 @@ function InfoSection({
               <div className="w-full flex justify-end">
                 <MainLink
                   href={btnLink}
-                  className="text-secondary-foreground bg-primary px-6 py-4 rounded-2xl text-white inline-block mr-auto hover:bg-white hover:text-primary border hover:border-primary"
+                  className="text-secondary-foreground bg-primary px-6 py-4    text-white inline-block mr-auto hover:bg-white hover:text-primary border hover:border-primary"
                 >
                   {btnText}
                 </MainLink>

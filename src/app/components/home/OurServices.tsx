@@ -30,7 +30,7 @@ function OurServices({
           {services?.map((item: Service, index) => (
             <div
               key={index}
-              className="bg-gray-200/70 rounded-3xl text-center px-5 py-7"
+              className="bg-gray-200/70    text-center px-5 py-7"
             >
               <div className="mb-2 flex items-center justify-center">
                 <Image
@@ -48,7 +48,7 @@ function OurServices({
 
               <a
               target="_blank"
-                className="px-5 py-2 text-primary border-[1px] border-primary rounded-full hover:bg-primary hover:text-white"
+                className="px-5 py-2 text-primary border-[1px] border-primary   hover:bg-primary hover:text-white"
                 // locale={locale}
                 //@ts-ignore
                 href={item?.whatsapp_link}

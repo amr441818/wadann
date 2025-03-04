@@ -14,12 +14,12 @@ type CardWrwpper = {
 export const CardWrwpper = (props: CardWrwpper) => {
     return (
         <div
-            className={`h-[439px] w-full relative rounded-[16px] group overflow-hidden transition-all duration-1000 group ${
+            className={`h-[439px] w-full relative    group overflow-hidden transition-all duration-1000 group ${
                 props.className ? props.className : ""
             }`}
         >
-            <Image src={props.imgUrl} fill alt="property image" className="rounded-[16px] object-cover" />
-            <div className="card-overlay rounded-[24px]"></div>
+            <Image src={props.imgUrl} fill alt="property image" className="   object-cover" />
+            <div className="card-overlay   "></div>
             {props.place && (
                 <div className=" flex flex-col gap-4 justify-end z-40 p-4 absolute top-0 left-0 h-full w-full">
                     <div className="flex flex-col gap-1 w-full ">
@@ -60,7 +60,7 @@ export const CardWrwpper = (props: CardWrwpper) => {
             )}
 
             {props.children && (
-                <div className={`absolute rounded-[24px] w-full h-full top-0 left-0 z-50 text-white`}>
+                <div className={`absolute    w-full h-full top-0 left-0 z-50 text-white`}>
                     {" "}
                     {props.children}
                 </div>

@@ -14,9 +14,9 @@ function FixedSocial(params: any) {
   }
 
   return (
-    <div className="fixed bottom-[50%] left-0 flex flex-col flex-wrap gap-4 px-3 py-5 rounded-r-2xl shadow-2xl bg-white z-[90]">
+    <div className="fixed bottom-[50%] left-0 flex flex-col flex-wrap gap-4 px-3 py-5    shadow-2xl bg-white z-[90]">
       <Link
-        className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
+        className="border border-primary   p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
         /* @ts-ignore */
         href={myObject?.whatsapp || "home"}
       >
@@ -26,7 +26,7 @@ function FixedSocial(params: any) {
         />
       </Link>
       <Link
-        className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
+        className="border border-primary   p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
         /* @ts-ignore */
         href={myObject?.snapchat || "home"}
       >
@@ -36,14 +36,14 @@ function FixedSocial(params: any) {
         />
       </Link>
       {/* <MainLink
-        className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center"
+        className="border border-primary   p-2 w-[33px] h-[33px] flex items-center justify-center"
         
         href="home"
       >
         <Icon icon="hugeicons:instagram" className="text-primary group-hover:text-white duration-300" />
       </MainLink> */}
       <Link
-        className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
+        className="border border-primary   p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
         /* @ts-ignore */
         href={myObject?.instagram || "home"}
       >
@@ -53,7 +53,7 @@ function FixedSocial(params: any) {
         />
       </Link>
       <Link
-        className="border border-primary rounded-full p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
+        className="border border-primary   p-2 w-[33px] h-[33px] flex items-center justify-center group hover:bg-primary duration-300"
         /* @ts-ignore */
         href={myObject?.facebook || "home"}
       >

@@ -36,7 +36,7 @@ function Statistics({
           {counters?.map((item: Counter, index) => (
             <div
               key={index}
-              className="rounded-3xl text-center px-5 py-7 text-white"
+              className="   text-center px-5 py-7 text-white"
             >
               <div className="mb-2 flex items-center justify-center">
                 <span className="text-3xl font-bold">{item?.count}+</span>

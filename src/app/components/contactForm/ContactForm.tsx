@@ -68,7 +68,7 @@ const ContactForm = ({ data, locale  }: { data: ContactUs, locale?:string }) => 
 
 
   return (
-    <div className={`${`/${locale}` === `/${place}`? "lg:absolute top-0 lg:-translate-y-1/2 left-1/2 lg:-translate-x-1/2":"my-[100px]"} form-shadow flex flex-col gap-[56px] bg-white rounded-[24px] lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px]`}>
+    <div className={`${`/${locale}` === `/${place}`? "lg:absolute top-0 lg:-translate-y-1/2 left-1/2 lg:-translate-x-1/2":"my-[100px]"} form-shadow flex flex-col gap-[56px] bg-white    lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px]`}>
       <div className="flex items-center justify-center">
         
         <h5 className="unique-h w-fit text-[24px] font-bold text-primary text-center">
@@ -126,7 +126,7 @@ const ContactForm = ({ data, locale  }: { data: ContactUs, locale?:string }) => 
 
             <button
               type="submit"
-              className="py-4 text-white text-[12px] bg-primary rounded-full hover:bg-white hover:text-primary border hover:border-primary duration-300"
+              className="py-4 text-white text-[12px] bg-primary   hover:bg-white hover:text-primary border hover:border-primary duration-300"
             >
               إرسال
             </button>
@@ -134,7 +134,7 @@ const ContactForm = ({ data, locale  }: { data: ContactUs, locale?:string }) => 
         </div>
         <div className="flex  flex-col gap-4  col-span-12  lg:col-span-6">
           <div className="flex gap-[10px] items-center">
-            <Link href={`tel:${data?.mobile}`} className="flex items-center justify-center  w-[57px] h-[49px] rounded-full bg-[#f9f6ef]">
+            <Link href={`tel:${data?.mobile}`} className="flex items-center justify-center  w-[57px] h-[49px]   bg-[#f9f6ef]">
               <Image
                 src="/assets/img/mobile.png"
                 width={57}
@@ -147,7 +147,7 @@ const ContactForm = ({ data, locale  }: { data: ContactUs, locale?:string }) => 
             <p className="text-[#636363] font-medium">{data?.mobile} </p>
           </div>
           <div className="flex gap-[10px] items-center">
-            <Link href={`mailTo:${data?.email}`} className="flex items-center justify-center w-[57px] h-[49px] rounded-full bg-[#f9f6ef]">
+            <Link href={`mailTo:${data?.email}`} className="flex items-center justify-center w-[57px] h-[49px]   bg-[#f9f6ef]">
               <Image
                 src="/assets/img/message.png"
                 width={72}
@@ -160,7 +160,7 @@ const ContactForm = ({ data, locale  }: { data: ContactUs, locale?:string }) => 
             <p className="text-[#636363] font-medium">{data?.email} </p>
           </div>
           <div className="flex gap-3 items-center">
-            <div className="flex items-center justify-center w-[57px] h-[49px] rounded-full  bg-[#f9f6ef]">
+            <div className="flex items-center justify-center w-[57px] h-[49px]    bg-[#f9f6ef]">
               <Image
                 src="/assets/img/loc.png"
                 width={72}

@@ -9,9 +9,9 @@ interface LayoutProps {
 export default async function AboutPage({ params }: LayoutProps) {
     const { locale } = await params
 
-    const { data: aboutUs } = await getAboutUs()
+    const { data: aboutUs } = await getAboutUs(locale)
 
-   
+    console.log('about us', aboutUs)
 
     
 
@@ -37,7 +37,7 @@ export default async function AboutPage({ params }: LayoutProps) {
                                 height={500}
                                 src={aboutUs?.data?.founder?.media?.original_url}
                                 alt="Our Team"
-                                className="w-full h-full object-cover rounded-lg"
+                                className="w-full h-full object-cover   "
                             />
                         </div>
                         <div className="w-full">
@@ -67,7 +67,7 @@ export default async function AboutPage({ params }: LayoutProps) {
                                 height={500}
                                 src={aboutUs?.data?.what?.media?.original_url}
                                 alt="Our Team"
-                                className="w-full h-full object-cover rounded-lg"
+                                className="w-full h-full object-cover   "
                             />
                         </div>
                         <div className="w-full">
