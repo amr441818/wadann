@@ -21,6 +21,11 @@ export const getBlogs = async (locale:string) => {
     "Accept-Language": locale
   }});
 };
+export const getProjects = async (locale:string) => {
+  return apiServiceCall({ url: "projects" ,headers:{
+    "Accept-Language": locale
+  }});
+};
 
 export const getBlog = async (id: string, locale: string) => {
   return apiServiceCall({ url: `posts/${id}`,headers:{

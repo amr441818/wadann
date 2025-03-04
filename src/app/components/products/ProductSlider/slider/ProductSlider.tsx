@@ -76,9 +76,10 @@ export default function ProductSlider({
                     />
                   </Link>
                   <div className="flex flex-col items-center gap-[5px]">
-                    <span>{item?.short.ar}</span>
+                    <span>{item?.title}</span>
                     <p className="text-[11px] w-[80%] text-center">
-                      {item.short.ar}
+                      {/* @ts-ignore */}
+                      {item?.short}
                     </p>
                   </div>
                 </div>

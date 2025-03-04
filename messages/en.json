@@ -52,7 +52,10 @@
     "choose_your_own_door": "You can choose your own door design",
     "choose_suitable_color": "Choose the suitable color for you",
     "choose_suitable_design": "Choose the suitable design for you",
-    "send_design_whatsapp": "Send your requested design to us via WhatsApp"
+    "send_design_whatsapp": "Send your requested design to us via WhatsApp",
+    "show" : "show project details",
+    "ourProjects" : "Our Projects"
+
   
   },
 
