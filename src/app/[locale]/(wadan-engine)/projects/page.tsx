@@ -19,7 +19,7 @@ export default async function Page({ params }: LayoutProps) {
   return (
     <div className="min-h-[800px] w-full pt-1 "  >
       <Container className="mt-[150px] mb-20">
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 w-full lg:gap-10">
           {/* @ts-ignore */}
           {projects?.map((project, index) => (
             <ProjectCard key={index} locale={locale} projectData={project} />

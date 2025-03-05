@@ -23,6 +23,7 @@ function AsideMenu({ lang, iconColor }: { lang: string; iconColor?: string }) {
     { value: t("products"), path: "#products" },
     { value: t("doorDesign"), path: "/design-door" },
     { value: t("ourPartners"), path: "#our-partners" },
+    { value: t("ourProjects"), path: "/projects" },
     { value: t("blogs"), path: "#blogs" },
     { value: t("contactUs"), path: "/contact-us" },
     // { value: t("profile"), path: "/profile" },
