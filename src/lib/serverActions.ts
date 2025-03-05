@@ -48,7 +48,7 @@ export const getBlog = async (id: string, locale: string) => {
 
 
 export const getAboutUs = async (locale:string) => {
-  return apiServiceCall({ url: "aboutushome", headers:{
+  return apiServiceCall({ url: "pages/about", headers:{
     "Accept-Language": locale
   } });
 };
