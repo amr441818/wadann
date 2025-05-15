@@ -1,13 +1,15 @@
-import React from 'react'
+import Image from "next/image";
 
-const loading = () => {
+export default function Loading() {
   return (
-    // <div className="loader"></div>
-    <div className='bg-white  z-40 fixed top-0 bottom-0 w-full left-0 flex h-screen justify-center items-center'>
-      
-      <div className="loader z-50"></div>
+    <div className="flex h-screen w-full items-center justify-center">
+      <Image
+        src="/logo.png"
+        alt="Logo"
+        width={100}
+        height={100}
+        className="object-contain logo-loading"
+      />
     </div>
-  )
+  );
 }
-
-export default loading
