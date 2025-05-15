@@ -10,10 +10,12 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import { Icon } from "@iconify/react";
 import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 
 const DesignDoor = ({ locale }: { locale: string }) => {
   const [colorId, setColorId] = React.useState(1);
   const [designId, setDesignId] = React.useState(1);
+  const searchParams = useSearchParams()
 
   const [designImg, setDesignImg] = React.useState("");
   const [watsApp, setWatsApp] = React.useState("");
@@ -23,7 +25,7 @@ const DesignDoor = ({ locale }: { locale: string }) => {
     queryKey: ["designsColors"],
     queryFn: () =>
       apiServiceCall({
-        url: "design_your_door",
+        url: `design_your_door?category_id${searchParams?.get('cat_id')}`,
         method: "GET",
         headers: { "Accept-Language": locale },
       }),
