@@ -42,7 +42,7 @@ const ProjectCard = ({ projectData, locale }: { projectData: Post; locale: any }
         <div className="pb-3 flex justify-end">
           <MainLink
             /* href={`blogs/${projectData?.slug}`} */
-            href={`blogs/${projectData?.id}`}
+            href={`projects/${projectData?.id}`}
             locale={locale}
             className="bg-transparent !text-primary hover:!text-[#A37130]/80 px-5 pt-2"
           >
