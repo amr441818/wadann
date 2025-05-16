@@ -22,7 +22,7 @@ console.log('cats', data)
       <Container className="mt-[150px] mb-20">
 
     <div className="flex flex-col gap-20">
-    <h1 className="text-primary font-semibold text-[28px] my-10 text-center"> صمم باباك</h1>
+    <h1 className="text-primary font-semibold text-[22px] lg:text-3xl my-10 text-center"> صمم باباك</h1>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 w-full lg:gap-10">
     
     {data?.map((category, index) => (

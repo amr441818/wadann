@@ -59,14 +59,14 @@ function RightSideFooter({ data, language }) {
     <>
       {cols.map((col) => (
         <div key={col.title || "empty"}>
-          <h3 className={`font-semibold ${col.title ? "mb-2" : "mb-8"}`}>
+          <h3 className={`font-semibold ${col.title ? "mb-2" : "mb-2 md:mb-8"}`}>
             {col.title}
           </h3>
           <div className="flex flex-col">
             {col.links?.map((item) => (
               <div  key={item.value} className=" flex flex-col  group w-fit">
               <MainLink
-                className=" lg:my-3 block text-white/70  w-fit hover:text-white  duration-200"
+                className="my-2 lg:my-3 block text-white/70  w-fit hover:text-white  duration-200"
                
                 locale={language}
                 href={item.path}

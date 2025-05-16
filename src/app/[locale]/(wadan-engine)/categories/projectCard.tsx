@@ -26,7 +26,7 @@ const ProjectCard = ({ projectData, locale }: { projectData: Post; locale: any }
       </div>
       <div className="px-[14px]  py-4 bg-white">
         <div className="pb-2 flex justify-center">
-          <div className="font-semibold text-[18px] mb-1">
+          <div className="font-semibold text-[14px] lg:text-[18px] mb-1">
             {/* @ts-ignore */}
             {projectData.name || "no title"}
           </div>

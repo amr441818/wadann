@@ -13,7 +13,7 @@ const InputComponent = (props: customInputProps) => {
             )}
             <input
                 type={props.type}
-                placeholder={props.placeholder}
+                placeholder={props.placeholder || ""}
                 value={props.value}
                 name={props.name}
                 {...props.register(props.name)}

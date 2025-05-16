@@ -61,11 +61,11 @@ export default function MainHeaderSlider(props: sliderProps) {
                     </div>
                     <div className="flex col-span-12 lg:col-span-6 items-center justify-center lg:justify-end">
                       <div className="flex flex-col items-start w-full text-white gap-[26px]">
-                        <h1 className="text-[35px] font-bold lg:w-[334px] mx-auto">
+                        <h1 className="text-[20px] lg:text-[35px] font-bold lg:w-[334px] mx-auto">
                           {" "}
                           {file?.name}
                         </h1>
-                        <p className="lg:w-[291px] text-start text-[16px] text-gray-300 mx-auto">
+                        <p className="text-[13px] lg:text-[16px] lg:w-[291px] text-start text-gray-300 mx-auto">
                           {" "}
                           {file?.content}
                         </p>

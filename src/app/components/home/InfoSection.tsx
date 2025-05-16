@@ -28,7 +28,7 @@ function InfoSection({
   const t = useTranslations("WhoWeAre");
   
   return (
-    <section className="bg-background px-5 lg:px-0 mt-16">
+    <section className="bg-background mt-16">
       <Container>
         <div
           className={`flex flex-col gap-7 lg:gap-[95px] ${
@@ -46,13 +46,13 @@ function InfoSection({
           </div>
           <div className="w-full lg:w-[70%] flex flex-col items-center lg:items-start  max-lg:mt-5">
             <h2
-              className={`unique-h text-[32px]  ${
+              className={`unique-h text-[22px] lg:text-[32px]  ${
                 reverse ? "" : "mb-5 lg:mb-7"
               } text-primary font-bold`}
             >
                {t("who-we-are")} 
             </h2>
-            <p className="text-muted-foreground mb-4 font-light text-xl max-lg:mb-5">
+            <p className="text-muted-foreground mb-4 font-light text-[16px] lg:text-xl max-lg:mb-5">
               {description}
             </p>
             {noButton && (

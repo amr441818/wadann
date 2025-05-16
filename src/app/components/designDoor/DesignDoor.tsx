@@ -80,7 +80,7 @@ const DesignDoor = ({ locale }: { locale: string }) => {
           </div>
 
           <div className="flex col-span-12 lg:col-span-9 flex-col gap-4">
-            <h6 className="text-primary text-[24px] font-bold">{t("design_your_door")}</h6>
+            <h6 className="text-primary text-[19px] lg:text-[24px] font-bold">{t("design_your_door")}</h6>
 
             <div className="felx flex-col gap-[13px]">
               <p className="text-[#636363] text-[12px]">
@@ -139,7 +139,7 @@ const DesignDoor = ({ locale }: { locale: string }) => {
             </div>
             <div className="flex relative">
             {/* <Image src="/assets/img/doorWats.png" alt="df" width={10} height={10} className=" w-[50px] h-[50px]   bg-green-400 absolute right-0 top-0 z-999" /> */}
-            <a target="_blank" className=" text-white bg-primary w-fit py-[17px] !rounded-[25px] px-[55px] !z-0 " href={`${watsApp}`}>
+            <a target="_blank" className="text-center text-[14px] lg:text-[18px] text-white bg-primary w-fit py-[17px] !rounded-[25px] px-[20px] lg:px-[55px] !z-0 " href={`${watsApp}`}>
             {t("send_design_whatsapp")}                </a>
             </div>
            

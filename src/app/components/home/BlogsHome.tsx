@@ -21,7 +21,7 @@ function BlogsHome({ locale, blogs }: { locale: string, blogs:Post[] }) {
     <div className="" id="blogs">
       <Container>
       <div className="flex justify-center items-center">
-      <h2 className="text-3xl font-bold text-primary mt-10 mb-5 text-center unique-h w-fit ">
+      <h2 className="unique-h text-[22px] lg:text-3xl font-bold text-primary mt-10 mb-5 text-center w-fit ">
          {locale === "ar" ? "المدونة": "Blogs"}
         </h2>
       </div>

@@ -42,7 +42,7 @@ async function page({params}:LayoutProps) {
                 </div>
                 <h2 className="font-bold text-xl text-primary">{aboutUs?.sections[0].title}</h2>
               </div>
-              <p className="text-muted-foreground mb-4 font-light text-lg max-lg:mb-5 pl-5">
+              <p className="text-muted-foreground mb-4 font-light text-[15px] lg:text-lg max-lg:mb-5 pl-5">
               {aboutUs?.sections[0].content}
               </p>
             </div>
@@ -64,7 +64,8 @@ async function page({params}:LayoutProps) {
                 </div>
                 <h2 className="font-bold text-xl text-primary">{aboutUs?.sections[1].title}</h2>
               </div>
-              <p className="text-muted-foreground mb-4 font-light text-lg max-lg:mb-5 pl-5">
+              {/* <p className="text-muted-foreground mb-4 font-light text-lg max-lg:mb-5 pl-5"> */}
+              <p className="text-muted-foreground mb-4 font-light text-[15px] lg:text-lg max-lg:mb-5 pl-5">
               {aboutUs?.sections[0].content}
               </p>
             </div>

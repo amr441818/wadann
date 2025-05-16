@@ -41,10 +41,10 @@ function OurServices({
                   className=" w-[47px] h-[47px] text-primary "
                 />
               </div>
-              <h3 className="text-lg font-bold text-primary mb-2">
+              <h3 className="text-[18px] lg:text-lg font-bold text-primary mb-2">
                 {item?.name}{" "}
               </h3>
-              <p className="text-paragText mb-5 text-sm">{item?.content} </p>
+              <p className="text-paragText mb-5 text-[12px] lg:text-sm">{item?.content} </p>
 
               <a
               target="_blank"

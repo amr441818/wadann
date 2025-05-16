@@ -96,14 +96,14 @@ if( place != lang){
               width={100}
               height={100}
               alt={"logo"}
-              className="h-[100px] w-[100px]"
+              className="h-[70px] w-[70px]"
               priority
             />
           </Link>
 
           {/* links */}
           <div>
-            <ul className="hidden lg:flex items-center gap-4 w-full md:px-5 text-paragText">
+            <ul className="hidden xl:flex items-center gap-4 w-full md:px-5 text-paragText">
               {menuItems.map((item) => (
                 <li key={item.value} className="hover:text-primary">
                   <Link
@@ -141,7 +141,7 @@ if( place != lang){
               download
               rel="noopener noreferrer"
               target="_blank"
-              className="bg-primary text-white flex items-center gap-2 px-5 py-2 mr-3   "
+              className="bg-primary text-white flex items-center gap-2 px-3 md:px-5 py-2 mr-2 md:mr-3 "
             >
               <Icon icon="material-symbols:download-rounded" />
               <span

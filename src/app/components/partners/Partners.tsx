@@ -26,7 +26,7 @@ const Partners = ({
       <div className="flex  flex-col gap-8">
         <div className="flex  justify-center gap-4">
           {/* @ts-ignore */}
-          <h6 className="unique-h text-center text-[24px] font-bold text-primary">
+          <h6 className="unique-h text-center text-[22px] lg:text-3xl font-bold text-primary">
             {t("ourPartners")}
           </h6>
         </div>

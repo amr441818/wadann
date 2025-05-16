@@ -33,7 +33,7 @@ function AsideMenu({ lang, iconColor }: { lang: string; iconColor?: string }) {
   return (
     <>
       {/* menu icon */}
-      <div className="flex lg:hidden items-center gap-[20px] text-base mr-7">
+      <div className="flex xl:hidden items-center gap-[20px] text-base mr-3 md:mr-7">
         <div
           className="flex items-center justify-center gap-5 cursor-pointer"
           onClick={() => setOpen(!open)}

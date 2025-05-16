@@ -71,7 +71,7 @@ const ContactForm = ({ data, locale  }: { data: ContactUs, locale?:string }) => 
     <div className={`${`/${locale}` === `/${place}`? "lg:absolute top-0 lg:-translate-y-1/2 left-1/2 lg:-translate-x-1/2":"my-[100px]"} form-shadow flex flex-col gap-[56px] bg-white    lg:w-[70%] m-auto p-4 lg:pt-[67px] lg:pb-[47px] lg:px-[76px]`}>
       <div className="flex items-center justify-center">
         
-        <h5 className="unique-h w-fit text-[24px] font-bold text-primary text-center">
+        <h5 className="unique-h w-fit text-[22px] lg:text-3xl font-bold text-primary text-center">
           {t("contact-us")}
         </h5>
       </div>
@@ -84,7 +84,7 @@ const ContactForm = ({ data, locale  }: { data: ContactUs, locale?:string }) => 
               width={72}
               height={72}
               alt="contact us form"
-              className="w-[72px] h-[72px]"
+              className="w-[40px] h-[40px] lg:w-[72px] lg:h-[72px]"
             />
 
             <p className="lg:w-[135px] text-[#333333] font-bold">
