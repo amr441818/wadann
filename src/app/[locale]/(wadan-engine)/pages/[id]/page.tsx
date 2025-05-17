@@ -8,6 +8,8 @@ import { getPage } from "@/lib/serverActions";
 import React from "react";
 // import { notFound } from "next/navigation";
 
+
+
 interface LayoutProps {
   params: Promise<{ locale: string | any; id: string }>;
 }
