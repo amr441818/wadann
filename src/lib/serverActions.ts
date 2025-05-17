@@ -50,6 +50,13 @@ export const getProject = async (id: string, locale: string) => {
     } });
   };
   
+  
+  export const getPage = async (id: string, locale:string) => {
+    return apiServiceCall({ url: `pages/${id}`,headers:{
+      "Accept-Language": locale
+    } });
+  };
+  
 
 
 

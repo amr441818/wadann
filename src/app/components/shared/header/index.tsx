@@ -13,9 +13,33 @@ import { Link } from "@/i18n/routing";
 import { NavbarMenueItem } from "@/types/shared";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import React from "react";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import apiServiceCall from "@/utils/api/shared/apiServiceCall";
 
 const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  // const [dropDownItems, setDropDownItems] = useState(null);
+
+  const { data: pagesData } = useQuery({
+    queryKey: ["pages"],
+    queryFn: () =>
+      apiServiceCall({
+        url: `pages`,
+        method: "GET",
+        headers: { "Accept-Language": lang },
+      }),
+    select: (data) =>
+      data?.data?.map((item) => ({
+        value: item?.title,
+        image: item?.image,
+        path: `/pages/${item?.id}`,
+      })),
+  });
+
+  console.log("dataaaaa", pagesData);
+
   const t = useTranslations("Header");
   const menuItems: NavbarMenueItem[] = [
     { value: t("home"), path: `/` },
@@ -26,29 +50,30 @@ const Header = ({ lang, catalog }: { lang: string; catalog: string }) => {
     { value: t("ourPartners"), path: "/#our-partners" },
     { value: t("blogs"), path: "/#blogs" },
     { value: t("contactUs"), path: "/contact-us" },
-   
+    {
+      value: t("pages"),
+      onClick: () => {
+        setOpen((prev) => !prev);
+
+        // setDropDownItems([...pagesData]);
+      },
+    },
   ];
 
-
-
-
   const pathname = usePathname();
-  console.log(pathname)
+  console.log(pathname);
   let place = pathname.split("/").pop();
- 
 
   // // @ts-ignore
 
-if( place != lang){
-
-  delete menuItems[2]
-  delete menuItems[4]
-  delete menuItems[5]
-  delete menuItems[6]
-}else{
-  
-  console.log(' this')
-}
+  if (place != lang) {
+    delete menuItems[2];
+    delete menuItems[4];
+    delete menuItems[5];
+    delete menuItems[6];
+  } else {
+    console.log(" this");
+  }
 
   let logoPath =
     place === "contact-us"
@@ -57,10 +82,9 @@ if( place != lang){
       ? "/logoGold.svg"
       : "/logo.png";
 
-  
   const isSingleBlog =
     pathname.includes("blogs") && place !== undefined && place !== "blogs";
-  
+
   if (isSingleBlog) {
     place = "single-blog";
 
@@ -104,22 +128,58 @@ if( place != lang){
           {/* links */}
           <div>
             <ul className="hidden xl:flex items-center gap-4 w-full md:px-5 text-paragText">
-              {menuItems.map((item) => (
-                <li key={item.value} className="hover:text-primary">
-                  <Link
-                    href={item.path}
-                    locale={lang}
-                    className={`
+              {menuItems?.map((item) => (
+                <li key={item?.value} className="hover:text-primary">
+                  {item?.onClick ? (
+                    <div className="relative">
+                      <button type="button" onClick={item?.onClick}>
+                        {item?.value}
+                      </button>
+
+                      {open && (
+                        <ul className="absolute top-[50px] w-[200px] left-[-100px] bg-white rounded-md border border-primary">
+                          {pagesData?.map((item) => (
+                            <li
+                              key={item?.value}
+                              className="py-2 px-3 hover:bg-primary hover:text-white text-primary"
+                            >
+                              <Link
+                                href={item?.path}
+                                locale={lang}
+                                className={`
                     ${
-                       item.path === `/${place}`  || `${item.path}${lang}` === `/${place}` 
+                      item?.path === `/${place}` ||
+                      `${item?.path}${lang}` === `/${place}`
                         ? "unique-h after:border-b-2 text-[16px] text-primary font-bold ltr:after:border-l-2 rtl:after:border-r-2 after:w-[20px] after:h-[18px]"
                         : ""
                     }
                     text-[16px] font-medium 
                     `}
-                  >
-                    {item.value}
-                  </Link>
+                              >
+                                {item?.value}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item?.path}
+                      locale={lang}
+                      className={`
+                    ${
+                      item?.path === `/${place}` ||
+                      `${item?.path}${lang}` === `/${place}`
+                        ? "unique-h after:border-b-2 text-[16px] text-primary font-bold ltr:after:border-l-2 rtl:after:border-r-2 after:w-[20px] after:h-[18px]"
+                        : ""
+                    }
+                    text-[16px] font-medium 
+                    `}
+                    >
+                      {item?.value}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
